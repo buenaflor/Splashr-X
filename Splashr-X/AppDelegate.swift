@@ -19,7 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window = UIWindow(frame: UIScreen.main.bounds)
     window?.makeKeyAndVisible()
     
-    
+    if let window = window {
+      let sceneCoordinator = SceneCoordinator(window: window)
+      SceneCoordinator.shared = sceneCoordinator
+      sceneCoordinator.transition(to: Scene.collection)
+    }
     
     return true
   }
