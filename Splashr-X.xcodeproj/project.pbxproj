@@ -1,0 +1,591 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3454DEEC229AF2D600EA3592 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3454DEEB229AF2D600EA3592 /* AppDelegate.swift */; };
+		3454DEEE229AF2D600EA3592 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3454DEED229AF2D600EA3592 /* ViewController.swift */; };
+		3454DEF1229AF2D600EA3592 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3454DEEF229AF2D600EA3592 /* Main.storyboard */; };
+		3454DEF3229AF2D700EA3592 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3454DEF2229AF2D700EA3592 /* Assets.xcassets */; };
+		3454DEF6229AF2D700EA3592 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3454DEF4229AF2D700EA3592 /* LaunchScreen.storyboard */; };
+		3454DF01229AF2D700EA3592 /* Splashr_XTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3454DF00229AF2D700EA3592 /* Splashr_XTests.swift */; };
+		3454DF0C229AF2D700EA3592 /* Splashr_XUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3454DF0B229AF2D700EA3592 /* Splashr_XUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3454DEFD229AF2D700EA3592 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3454DEE0229AF2D600EA3592 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3454DEE7229AF2D600EA3592;
+			remoteInfo = "Splashr-X";
+		};
+		3454DF08229AF2D700EA3592 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3454DEE0229AF2D600EA3592 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3454DEE7229AF2D600EA3592;
+			remoteInfo = "Splashr-X";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3454DEE8229AF2D600EA3592 /* Splashr-X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Splashr-X.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3454DEEB229AF2D600EA3592 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3454DEED229AF2D600EA3592 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3454DEF0229AF2D600EA3592 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3454DEF2229AF2D700EA3592 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3454DEF5229AF2D700EA3592 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3454DEF7229AF2D700EA3592 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3454DEFC229AF2D700EA3592 /* Splashr-XTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Splashr-XTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3454DF00229AF2D700EA3592 /* Splashr_XTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splashr_XTests.swift; sourceTree = "<group>"; };
+		3454DF02229AF2D700EA3592 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3454DF07229AF2D700EA3592 /* Splashr-XUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Splashr-XUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3454DF0B229AF2D700EA3592 /* Splashr_XUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splashr_XUITests.swift; sourceTree = "<group>"; };
+		3454DF0D229AF2D700EA3592 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3454DEE5229AF2D600EA3592 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3454DEF9229AF2D700EA3592 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3454DF04229AF2D700EA3592 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3454DEDF229AF2D600EA3592 = {
+			isa = PBXGroup;
+			children = (
+				3454DEEA229AF2D600EA3592 /* Splashr-X */,
+				3454DEFF229AF2D700EA3592 /* Splashr-XTests */,
+				3454DF0A229AF2D700EA3592 /* Splashr-XUITests */,
+				3454DEE9229AF2D600EA3592 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3454DEE9229AF2D600EA3592 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3454DEE8229AF2D600EA3592 /* Splashr-X.app */,
+				3454DEFC229AF2D700EA3592 /* Splashr-XTests.xctest */,
+				3454DF07229AF2D700EA3592 /* Splashr-XUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3454DEEA229AF2D600EA3592 /* Splashr-X */ = {
+			isa = PBXGroup;
+			children = (
+				3454DEEB229AF2D600EA3592 /* AppDelegate.swift */,
+				3454DEED229AF2D600EA3592 /* ViewController.swift */,
+				3454DEEF229AF2D600EA3592 /* Main.storyboard */,
+				3454DEF2229AF2D700EA3592 /* Assets.xcassets */,
+				3454DEF4229AF2D700EA3592 /* LaunchScreen.storyboard */,
+				3454DEF7229AF2D700EA3592 /* Info.plist */,
+			);
+			path = "Splashr-X";
+			sourceTree = "<group>";
+		};
+		3454DEFF229AF2D700EA3592 /* Splashr-XTests */ = {
+			isa = PBXGroup;
+			children = (
+				3454DF00229AF2D700EA3592 /* Splashr_XTests.swift */,
+				3454DF02229AF2D700EA3592 /* Info.plist */,
+			);
+			path = "Splashr-XTests";
+			sourceTree = "<group>";
+		};
+		3454DF0A229AF2D700EA3592 /* Splashr-XUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3454DF0B229AF2D700EA3592 /* Splashr_XUITests.swift */,
+				3454DF0D229AF2D700EA3592 /* Info.plist */,
+			);
+			path = "Splashr-XUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3454DEE7229AF2D600EA3592 /* Splashr-X */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3454DF10229AF2D700EA3592 /* Build configuration list for PBXNativeTarget "Splashr-X" */;
+			buildPhases = (
+				3454DEE4229AF2D600EA3592 /* Sources */,
+				3454DEE5229AF2D600EA3592 /* Frameworks */,
+				3454DEE6229AF2D600EA3592 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Splashr-X";
+			productName = "Splashr-X";
+			productReference = 3454DEE8229AF2D600EA3592 /* Splashr-X.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3454DEFB229AF2D700EA3592 /* Splashr-XTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3454DF13229AF2D700EA3592 /* Build configuration list for PBXNativeTarget "Splashr-XTests" */;
+			buildPhases = (
+				3454DEF8229AF2D700EA3592 /* Sources */,
+				3454DEF9229AF2D700EA3592 /* Frameworks */,
+				3454DEFA229AF2D700EA3592 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3454DEFE229AF2D700EA3592 /* PBXTargetDependency */,
+			);
+			name = "Splashr-XTests";
+			productName = "Splashr-XTests";
+			productReference = 3454DEFC229AF2D700EA3592 /* Splashr-XTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3454DF06229AF2D700EA3592 /* Splashr-XUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3454DF16229AF2D700EA3592 /* Build configuration list for PBXNativeTarget "Splashr-XUITests" */;
+			buildPhases = (
+				3454DF03229AF2D700EA3592 /* Sources */,
+				3454DF04229AF2D700EA3592 /* Frameworks */,
+				3454DF05229AF2D700EA3592 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3454DF09229AF2D700EA3592 /* PBXTargetDependency */,
+			);
+			name = "Splashr-XUITests";
+			productName = "Splashr-XUITests";
+			productReference = 3454DF07229AF2D700EA3592 /* Splashr-XUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3454DEE0229AF2D600EA3592 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Giancarlo Buenaflor";
+				TargetAttributes = {
+					3454DEE7229AF2D600EA3592 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					3454DEFB229AF2D700EA3592 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 3454DEE7229AF2D600EA3592;
+					};
+					3454DF06229AF2D700EA3592 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 3454DEE7229AF2D600EA3592;
+					};
+				};
+			};
+			buildConfigurationList = 3454DEE3229AF2D600EA3592 /* Build configuration list for PBXProject "Splashr-X" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3454DEDF229AF2D600EA3592;
+			productRefGroup = 3454DEE9229AF2D600EA3592 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3454DEE7229AF2D600EA3592 /* Splashr-X */,
+				3454DEFB229AF2D700EA3592 /* Splashr-XTests */,
+				3454DF06229AF2D700EA3592 /* Splashr-XUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3454DEE6229AF2D600EA3592 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3454DEF6229AF2D700EA3592 /* LaunchScreen.storyboard in Resources */,
+				3454DEF3229AF2D700EA3592 /* Assets.xcassets in Resources */,
+				3454DEF1229AF2D600EA3592 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3454DEFA229AF2D700EA3592 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3454DF05229AF2D700EA3592 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3454DEE4229AF2D600EA3592 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3454DEEE229AF2D600EA3592 /* ViewController.swift in Sources */,
+				3454DEEC229AF2D600EA3592 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3454DEF8229AF2D700EA3592 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3454DF01229AF2D700EA3592 /* Splashr_XTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3454DF03229AF2D700EA3592 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3454DF0C229AF2D700EA3592 /* Splashr_XUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3454DEFE229AF2D700EA3592 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3454DEE7229AF2D600EA3592 /* Splashr-X */;
+			targetProxy = 3454DEFD229AF2D700EA3592 /* PBXContainerItemProxy */;
+		};
+		3454DF09229AF2D700EA3592 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3454DEE7229AF2D600EA3592 /* Splashr-X */;
+			targetProxy = 3454DF08229AF2D700EA3592 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3454DEEF229AF2D600EA3592 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3454DEF0229AF2D600EA3592 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3454DEF4229AF2D700EA3592 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3454DEF5229AF2D700EA3592 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3454DF0E229AF2D700EA3592 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3454DF0F229AF2D700EA3592 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3454DF11229AF2D700EA3592 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CR332YLA9N;
+				INFOPLIST_FILE = "Splashr-X/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.giancarlobuenaflor.Splashr-X";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3454DF12229AF2D700EA3592 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CR332YLA9N;
+				INFOPLIST_FILE = "Splashr-X/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.giancarlobuenaflor.Splashr-X";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3454DF14229AF2D700EA3592 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CR332YLA9N;
+				INFOPLIST_FILE = "Splashr-XTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.giancarlobuenaflor.Splashr-XTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Splashr-X.app/Splashr-X";
+			};
+			name = Debug;
+		};
+		3454DF15229AF2D700EA3592 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CR332YLA9N;
+				INFOPLIST_FILE = "Splashr-XTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.giancarlobuenaflor.Splashr-XTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Splashr-X.app/Splashr-X";
+			};
+			name = Release;
+		};
+		3454DF17229AF2D700EA3592 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CR332YLA9N;
+				INFOPLIST_FILE = "Splashr-XUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.giancarlobuenaflor.Splashr-XUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Splashr-X";
+			};
+			name = Debug;
+		};
+		3454DF18229AF2D700EA3592 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CR332YLA9N;
+				INFOPLIST_FILE = "Splashr-XUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.giancarlobuenaflor.Splashr-XUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Splashr-X";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3454DEE3229AF2D600EA3592 /* Build configuration list for PBXProject "Splashr-X" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3454DF0E229AF2D700EA3592 /* Debug */,
+				3454DF0F229AF2D700EA3592 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3454DF10229AF2D700EA3592 /* Build configuration list for PBXNativeTarget "Splashr-X" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3454DF11229AF2D700EA3592 /* Debug */,
+				3454DF12229AF2D700EA3592 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3454DF13229AF2D700EA3592 /* Build configuration list for PBXNativeTarget "Splashr-XTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3454DF14229AF2D700EA3592 /* Debug */,
+				3454DF15229AF2D700EA3592 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3454DF16229AF2D700EA3592 /* Build configuration list for PBXNativeTarget "Splashr-XUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3454DF17229AF2D700EA3592 /* Debug */,
+				3454DF18229AF2D700EA3592 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3454DEE0229AF2D600EA3592 /* Project object */;
+}
