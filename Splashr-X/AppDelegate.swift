@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     if let window = window {
       let sceneCoordinator = SceneCoordinator(window: window)
       SceneCoordinator.shared = sceneCoordinator
-      sceneCoordinator.transition(to: Scene.collection)
+      sceneCoordinator.transition(to: Scene.photos)
     }
     
     return true

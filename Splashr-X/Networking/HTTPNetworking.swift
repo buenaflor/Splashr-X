@@ -25,7 +25,7 @@ public enum HTTPNetworkingError: Error {
 
 public class HTTPNetworking<Resource: ResourceType>: NSObject, HTTPNetworkingType, URLSessionTaskDelegate {
 
-  var isWaitingForConnectivityHandler: (() -> Void)?
+  var isWaitingForConnectivityHandler: ((URLSession, URLSessionTask) -> Void)?
 
   private var session: HTTPNetworkingSession!
   private let manager = URLSessionManager.shared
@@ -34,12 +34,6 @@ public class HTTPNetworking<Resource: ResourceType>: NSObject, HTTPNetworkingTyp
     super.init()
     manager.taskDelegate = self
     session = manager.session
-  }
-  
-  public func cachedResponse(_ resource: Resource) -> CachedURLResponse? {
-    let cache = URLCache.shared
-    let request = URLRequest(resource: resource)
-    return cache.cachedResponse(for: request)
   }
   
   @discardableResult
@@ -72,6 +66,6 @@ public class HTTPNetworking<Resource: ResourceType>: NSObject, HTTPNetworkingTyp
   }
   
   public func urlSession(_ session: URLSession, taskIsWaitingForConnectivity task: URLSessionTask) {
-    isWaitingForConnectivityHandler?()
+    isWaitingForConnectivityHandler?(session, task)
   }
 }

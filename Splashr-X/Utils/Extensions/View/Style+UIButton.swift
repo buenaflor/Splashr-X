@@ -17,19 +17,28 @@ extension ViewStyle where T: UIView {
   }
 }
 
+extension ViewStyle where T: UIView {
+  static var bordered: ViewStyle<T> {
+    return ViewStyle<T> {
+      $0.layer.borderWidth = 0.4
+      $0.layer.borderColor = UIColor.lightGray.cgColor
+      return $0
+    }
+  }
+  
+  static var circle: ViewStyle<T> {
+    return ViewStyle<T> {
+      $0.layer.cornerRadius = $0.frame.width / 2
+      $0.clipsToBounds = true
+      return $0
+    }
+  }
+}
+
 extension ViewStyle where T: UIImageView {
   static var fill: ViewStyle<T> {
     return ViewStyle<T> {
       $0.contentMode = .scaleAspectFill
-      $0.layer.masksToBounds = true
-      return $0
-    }
-  }
-
-  static var bordered: ViewStyle<T> {
-    return ViewStyle<T> {
-      $0.layer.borderWidth = 0.2
-      $0.layer.borderColor = UIColor.lightGray.cgColor
       return $0
     }
   }

@@ -18,5 +18,4 @@ public protocol HTTPNetworkingType {
     completion: @escaping (HTTPNetworkingResult<Response>) -> Void
     ) -> URLSessionDataTask
   
-  func cachedResponse(_ resource: Resource) -> CachedURLResponse?
 }
