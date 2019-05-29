@@ -24,13 +24,24 @@ class PhotosViewCellConfigurator<Model: PhotoTableViewItem>: CellConfigurator {
       if let url = URL(string: user.profileImage?.medium ?? "") {
         Nuke.loadImage(with: url, into: cell.userImageView)
       }
-      if let username = model.user?.fullName {
+      if let username = user.fullName {
         cell.usernameLabel.text = username
       }
-      if let color = model.color {
-        cell.locationLabel.text = "\(color)"
-        cell.colorView.backgroundColor = UIColor(hexString: color)
-      }
+    }
+    if let color = model.color {
+      cell.locationLabel.text = "\(color)"
+      cell.colorView.isHidden = true
+    }
+    if let likes = model.likes {
+      cell.likesLabel.text = "\(likes) likes"
+    }
+    if let description = model.description {
+      cell.descriptionLabel.text = description
+    } else {
+      cell.descriptionLabel.isHidden = true
+    }
+    if let createdAt = model.created {
+      cell.createdAtLabel.text = createdAt
     }
     
     if let url = URL(string: model.urls?.regular ?? "") {

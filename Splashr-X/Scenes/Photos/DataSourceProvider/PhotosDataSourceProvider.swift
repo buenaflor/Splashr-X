@@ -60,7 +60,11 @@ class PhotosViewDataSourceProvider<Model: PhotoTableViewItem>: NSObject, TableVi
     }
     let ratio = CGFloat(width) / CGFloat(height)
     let newHeight = tableView.frame.width / ratio
-    return newHeight
+    
+    // This is the padding that is additionally added with the stack views
+    var stackViewPaddings: CGFloat = 120
+    
+    return newHeight + stackViewPaddings
   }
   
 }
