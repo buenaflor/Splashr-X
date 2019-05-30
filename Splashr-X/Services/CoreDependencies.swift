@@ -17,6 +17,6 @@ protocol HasCollectionsRepo {
 }
 
 final class CoreDependencies: HasPhotosRepo, HasCollectionsRepo {
-  var photosRepoType: PhotosRepoType = PhotosRepo()
-  var collectionsRepoType: CollectionsRepoType = CollectionsRepo()
+  lazy var photosRepoType: PhotosRepoType = PhotosRepo()
+  lazy var collectionsRepoType: CollectionsRepoType = CollectionsRepo()
 }
