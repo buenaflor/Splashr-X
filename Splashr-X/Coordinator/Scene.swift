@@ -13,6 +13,10 @@ protocol TargetScene {
 }
 
 enum Scene {
+  
+  /// The controller that holds all ViewControllers
+  case tabbar
+  
   /// The list of collections scene
   case collection
   
@@ -23,13 +27,17 @@ enum Scene {
 extension Scene: TargetScene {
   var transition: SceneTransitionType {
     switch self {
+    case .tabbar:
+      let appDependencies = CoreDependencies()
+      let tabbar = TabbarController.instantiate(dependencies: appDependencies)
+      return .root(tabbar)
     case .collection:
       let collectionsRepoType: CollectionsRepoType = CollectionsRepo()
       let collectionsVC = CollectionsViewController.instantiate(collectionsRepoType: collectionsRepoType)
       return .root(collectionsVC)
     case .photos:
-      let photoRepoType: PhotoRepoType = PhotoRepo()
-      let photosVC = PhotosViewController.instantiate(photoRepoType: photoRepoType)
+      let photosRepoType: PhotosRepoType = PhotosRepo()
+      let photosVC = PhotosViewController.instantiate(photosRepoType: photosRepoType)
       return .root(photosVC)
     }
   }

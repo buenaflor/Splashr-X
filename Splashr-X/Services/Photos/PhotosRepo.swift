@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PhotoRepo: PhotoRepoType {
+class PhotosRepo: PhotosRepoType {
   
   var isWaitingForConnectivityHandler: ((URLSession, URLSessionTask) -> Void)?
   

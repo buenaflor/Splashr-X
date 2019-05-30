@@ -10,7 +10,7 @@ import Foundation
 
 typealias Photos = [Photo]
 
-protocol PhotoRepoType {
+protocol PhotosRepoType {
   func photos(byPageNumber pageNumber: Int, orderBy: OrderBy, curated: Bool, completion: @escaping  ((Result<Photos, Error>) -> Void))
   
   var isWaitingForConnectivityHandler: ((URLSession, URLSessionTask) -> Void)? { get set }

@@ -17,9 +17,17 @@ extension CollectionsViewController {
 }
 
 extension PhotosViewController {
-  static func instantiate(photoRepoType: PhotoRepoType) -> PhotosViewController {
+  static func instantiate(photosRepoType: PhotosRepoType) -> PhotosViewController {
     let vc = PhotosViewController.initFromNib()
-    vc.photoRepoType = photoRepoType
+    vc.photosRepoType = photosRepoType
     return vc
+  }
+}
+
+extension TabbarController {
+  static func instantiate(dependencies: CoreDependencies) -> TabbarController {
+    let tabbarController = TabbarController()
+    tabbarController.dependencies = dependencies
+    return tabbarController
   }
 }

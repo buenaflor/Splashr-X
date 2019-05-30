@@ -10,7 +10,7 @@ import UIKit
 
 class PhotosViewController: UIViewController {
   
-  var photoRepoType: PhotoRepoType? {
+  var photosRepoType: PhotosRepoType? {
     didSet {
       configureIsWaitingForConnectivity()
     }
@@ -27,6 +27,18 @@ class PhotosViewController: UIViewController {
     didSet {
       photosViewDataSourceProvider?.prefetchCollections = { [weak self] in
         self?.fetchPhotos()
+      }
+      photosViewDataSourceProvider?.likeButtonTappedHandler = { [weak self] button, photo in
+        self?.likePhoto(button, photo)
+      }
+      photosViewDataSourceProvider?.sendButtonTappedHandler = { [weak self] button, photo in
+        self?.sendPhoto(button, photo)
+      }
+      photosViewDataSourceProvider?.downloadButtonTappedHandler = { [weak self] button, photo in
+        self?.downloadPhoto(button, photo)
+      }
+      photosViewDataSourceProvider?.bookmarkButtonTappedHandler = { [weak self] button, photo in
+        self?.bookmarkPhoto(button, photo)
       }
     }
   }
@@ -89,7 +101,7 @@ fileprivate extension PhotosViewController {
     
     isFetchInProgress = true
 
-    photoRepoType?.photos(byPageNumber: byPageNumber, orderBy: orderBy, curated: false, completion: { [weak self] (result) in
+    photosRepoType?.photos(byPageNumber: byPageNumber, orderBy: orderBy, curated: false, completion: { [weak self] (result) in
       switch result {
       case let .success(photos):
         self?.isFetchInProgress = false

@@ -9,6 +9,8 @@
 import UIKit
 
 class PhotosViewTableViewCell: UITableViewCell {
+  
+  // Currently not used
   @IBOutlet weak var colorView: UIView! {
     didSet {
       colorView
@@ -16,8 +18,6 @@ class PhotosViewTableViewCell: UITableViewCell {
         .apply(.bordered)
     }
   }
-  
-  @IBOutlet weak var locationLabel: UILabel!
   
   @IBOutlet weak var userImageView: UIImageView! {
     didSet {
@@ -27,6 +27,8 @@ class PhotosViewTableViewCell: UITableViewCell {
         .apply(.fill)
     }
   }
+  
+  @IBOutlet weak var locationLabel: UILabel!
   
   @IBOutlet weak var descriptionLabel: UILabel! {
     didSet {
@@ -51,22 +53,32 @@ class PhotosViewTableViewCell: UITableViewCell {
     super.awakeFromNib()
     selectionStyle = .none
   }
-}
-
-class VerticalTopAlignLabel: UILabel {
   
-  override func drawText(in rect:CGRect) {
-    guard let labelText = text else {  return super.drawText(in: rect) }
-    
-    let attributedText = NSAttributedString(string: labelText, attributes: [NSAttributedString.Key.font: font ?? UIFont.systemFont(ofSize: 12)])
-    var newRect = rect
-    newRect.size.height = attributedText.boundingRect(with: rect.size, options: .usesLineFragmentOrigin, context: nil).size.height
-    
-    if numberOfLines != 0 {
-      newRect.size.height = min(newRect.size.height, CGFloat(numberOfLines) * font.lineHeight)
-    }
-    
-    super.drawText(in: newRect)
+  // MARK: - Action Handlers
+  
+  var likeButtonTappedHandler: ((UIButton) -> Void)?
+  
+  @IBAction func likeButtonTapped(_ sender: UIButton) {
+    likeButtonTappedHandler?(sender)
   }
   
+  var sendButtonTappedHandler: ((UIButton) -> Void)?
+  
+  @IBAction func sendButtonTapped(_ sender: UIButton) {
+    sendButtonTappedHandler?(sender)
+  }
+  
+  var downloadButtonTappedHandler: ((UIButton) -> Void)?
+
+  @IBAction func downloadButtonTapped(_ sender: UIButton) {
+    downloadButtonTappedHandler?(sender)
+  }
+  
+  var bookmarkButtonTappedHandler: ((UIButton) -> Void)?
+
+  @IBAction func bookmarkButtonTapped(_ sender: UIButton) {
+    bookmarkButtonTappedHandler?(sender)
+  }
 }
+
+

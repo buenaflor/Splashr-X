@@ -29,13 +29,35 @@ class PhotosViewDataSourceProvider<Model: PhotoTableViewItem>: NSObject, TableVi
     guard indexPath.row < models.count else {
       return tableView.dequeue(UITableViewCell.self, for: indexPath)
     }
-    cellConfigurator?.model = models[indexPath.row]
+    let model = models[indexPath.row]
+    cellConfigurator?.model = model
     guard let cell = cellConfigurator?.create(from: tableView, at: indexPath) else {
       return UITableViewCell()
     }
+    
+    if let cell = cell as? PhotosViewTableViewCell {
+      cell.likeButtonTappedHandler = { [weak self] button in
+        self?.likeButtonTappedHandler?(button, model)
+      }
+      cell.sendButtonTappedHandler = { [weak self] button in
+        self?.sendButtonTappedHandler?(button, model)
+      }
+      cell.downloadButtonTappedHandler = { [weak self] button in
+        self?.downloadButtonTappedHandler?(button, model)
+      }
+      cell.bookmarkButtonTappedHandler = { [weak self] button in
+        self?.bookmarkButtonTappedHandler?(button, model)
+      }
+    }
+    
     return cell
   }
   
+  var likeButtonTappedHandler: ((UIButton, PhotoTableViewItem) -> Void)?
+  var sendButtonTappedHandler: ((UIButton, PhotoTableViewItem) -> Void)?
+  var downloadButtonTappedHandler: ((UIButton, PhotoTableViewItem) -> Void)?
+  var bookmarkButtonTappedHandler: ((UIButton, PhotoTableViewItem) -> Void)?
+
   // MARK: - Prefetching
   
   var prefetchCollections: (() -> Void)?
@@ -62,11 +84,10 @@ class PhotosViewDataSourceProvider<Model: PhotoTableViewItem>: NSObject, TableVi
     let newHeight = tableView.frame.width / ratio
     
     // This is the padding that is additionally added with the stack views
-    var stackViewPaddings: CGFloat = 120
+    let stackViewPaddings: CGFloat = 120
     
     return newHeight + stackViewPaddings
   }
-  
 }
 
 // MARK: - Reloadable
@@ -80,5 +101,4 @@ extension PhotosViewDataSourceProvider {
   func append(_ model: Model) {
     self.models.append(model)
   }
-  
 }

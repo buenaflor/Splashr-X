@@ -48,8 +48,26 @@ class PhotosViewCellConfigurator<Model: PhotoTableViewItem>: CellConfigurator {
       Nuke.loadImage(with: url, into: cell.photoImageView)
     }
     
+    // Action Handlers
+    
+    cell.likeButtonTappedHandler = { [weak self] button in
+      self?.likeButtonTappedHandler?(button)
+    }
+    cell.sendButtonTappedHandler = { [weak self] button in
+      self?.sendButtonTappedHandler?(button)
+    }
+    cell.downloadButtonTappedHandler = { [weak self] button in
+      self?.downloadButtonTappedHandler?(button)
+    }
+    cell.bookmarkButtonTappedHandler = { [weak self] button in
+      self?.bookmarkButtonTappedHandler?(button)
+    }
+    
     return cell
   }
   
-  
+  var likeButtonTappedHandler: ((UIButton) -> Void)?
+  var sendButtonTappedHandler: ((UIButton) -> Void)?
+  var downloadButtonTappedHandler: ((UIButton) -> Void)?
+  var bookmarkButtonTappedHandler: ((UIButton) -> Void)?
 }
