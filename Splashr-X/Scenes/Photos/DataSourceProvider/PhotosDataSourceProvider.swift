@@ -48,6 +48,9 @@ class PhotosViewDataSourceProvider<Model: PhotoTableViewItem>: NSObject, TableVi
       cell.bookmarkButtonTappedHandler = { [weak self] button in
         self?.bookmarkButtonTappedHandler?(button, model)
       }
+      cell.photoImageViewTappedHandler = { [weak self] imageView in
+        self?.photoImageViewTappedHandler?(imageView, model, cell)
+      }
     }
     
     return cell
@@ -57,6 +60,7 @@ class PhotosViewDataSourceProvider<Model: PhotoTableViewItem>: NSObject, TableVi
   var sendButtonTappedHandler: ((UIButton, PhotoTableViewItem) -> Void)?
   var downloadButtonTappedHandler: ((UIButton, PhotoTableViewItem) -> Void)?
   var bookmarkButtonTappedHandler: ((UIButton, PhotoTableViewItem) -> Void)?
+  var photoImageViewTappedHandler: ((UIImageView, PhotoTableViewItem, UITableViewCell) -> Void)?
 
   // MARK: - Prefetching
   

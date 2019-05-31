@@ -29,4 +29,18 @@ extension PhotosViewController {
   func bookmarkPhoto(_ button: UIButton, _ photo: PhotoTableViewItem) {
     
   }
+  
+  /// Shows the photo details with an animation
+  func showPhotoDetails(_ imageView: UIImageView, _ details: PhotoTableViewItem, _ cell: UITableViewCell) {
+    guard let photo = imageView.image else {
+      print("Error: photo is nil, couldn't load/present details")
+      return
+    }
+    
+    // Set the cell so the transition knows the frame and the imageView
+    tappedCell = cell
+    
+    let scene = Scene.photoDetails(photo, details)
+    SceneCoordinator.shared.transition(to: scene)
+  }
 }

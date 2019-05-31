@@ -39,6 +39,7 @@ extension ViewStyle where T: UIImageView {
   static var fill: ViewStyle<T> {
     return ViewStyle<T> {
       $0.contentMode = .scaleAspectFill
+      $0.clipsToBounds = true
       return $0
     }
   }

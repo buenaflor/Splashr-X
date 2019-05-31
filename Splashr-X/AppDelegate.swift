@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     if let window = window {
       let sceneCoordinator = SceneCoordinator(window: window)
       SceneCoordinator.shared = sceneCoordinator
-      sceneCoordinator.transition(to: Scene.tabbar)
+      sceneCoordinator.transition(to: Scene.tabBar)
     }
     
     return true

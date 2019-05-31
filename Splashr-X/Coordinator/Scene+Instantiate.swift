@@ -6,7 +6,7 @@
 //  Copyright © 2019 Giancarlo Buenaflor. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension CollectionsViewController {
   static func instantiate(collectionsRepoType: CollectionsRepoType) -> CollectionsViewController {
@@ -24,10 +24,20 @@ extension PhotosViewController {
   }
 }
 
-extension TabbarController {
-  static func instantiate(dependencies: CoreDependencies) -> TabbarController {
-    let tabbarController = TabbarController()
+extension TabBarController {
+  static func instantiate(dependencies: CoreDependencies) -> TabBarController {
+    let tabbarController = TabBarController()
     tabbarController.dependencies = dependencies
     return tabbarController
   }
+}
+
+extension PhotoDetailsViewController {
+  static func instantiate(photo: UIImage, details: PhotoTableViewItem) -> PhotoDetailsViewController {
+    let photoDetailsVC = PhotoDetailsViewController()
+    photoDetailsVC.photo = photo
+    photoDetailsVC.details = details
+    return photoDetailsVC
+  }
+
 }

@@ -15,30 +15,22 @@ protocol TargetScene {
 enum Scene {
   
   /// The controller that holds all ViewControllers
-  case tabbar
+  case tabBar
   
-  /// The list of collections scene
-  case collection
-  
-  /// The list of photos screen
-  case photos
+  /// The details of a photo
+  case photoDetails(UIImage, PhotoTableViewItem)
 }
 
 extension Scene: TargetScene {
   var transition: SceneTransitionType {
     switch self {
-    case .tabbar:
+    case .tabBar:
       let appDependencies = CoreDependencies()
-      let tabbar = TabbarController.instantiate(dependencies: appDependencies)
-      return .root(tabbar)
-    case .collection:
-      let collectionsRepoType: CollectionsRepoType = CollectionsRepo()
-      let collectionsVC = CollectionsViewController.instantiate(collectionsRepoType: collectionsRepoType)
-      return .root(collectionsVC)
-    case .photos:
-      let photosRepoType: PhotosRepoType = PhotosRepo()
-      let photosVC = PhotosViewController.instantiate(photosRepoType: photosRepoType)
-      return .root(photosVC)
+      let tabBar = TabBarController.instantiate(dependencies: appDependencies)
+      return .root(tabBar)
+    case let .photoDetails(photo, details):
+      let photoDetailsVC = PhotoDetailsViewController.instantiate(photo: photo, details: details)
+      return .push(photoDetailsVC)
     }
   }
 }

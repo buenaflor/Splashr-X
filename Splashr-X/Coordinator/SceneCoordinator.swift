@@ -67,7 +67,6 @@ class SceneCoordinator: NSObject, SceneCoordinatorType {
         print("Can't push a view controller without a current navigation controller")
         return
       }
-      
       navigationController.pushViewController(SceneCoordinator.actualViewController(for: viewController), animated: true)
     case let .present(viewController):
       currentViewController.present(viewController, animated: true)

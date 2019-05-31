@@ -40,6 +40,9 @@ class PhotosViewController: UIViewController {
       photosViewDataSourceProvider?.bookmarkButtonTappedHandler = { [weak self] button, photo in
         self?.bookmarkPhoto(button, photo)
       }
+      photosViewDataSourceProvider?.photoImageViewTappedHandler = { [weak self] imageView, photo, cell in
+        self?.showPhotoDetails(imageView, photo, cell)
+      }
     }
   }
   
@@ -58,8 +61,13 @@ class PhotosViewController: UIViewController {
     }
   }
   
+  // TEMPORARY
+  var tappedCell: UITableViewCell?
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    navigationController?.delegate = navigationController as? AnimatableNavigationController
     
     // Fetches the very first page
     fetchPhotos()
@@ -81,9 +89,9 @@ class PhotosViewController: UIViewController {
   
   /// Called if the urlSession is waiting for connectivity
   fileprivate func configureIsWaitingForConnectivity() {
-//    photoRepoType?.isWaitingForConnectivityHandler = { [weak self] (session, task) in
-//      print("waitin for connectivity in photos vc")
-//    }
+    //    photoRepoType?.isWaitingForConnectivityHandler = { [weak self] (session, task) in
+    //      print("waitin for connectivity in photos vc")
+    //    }
   }
 }
 

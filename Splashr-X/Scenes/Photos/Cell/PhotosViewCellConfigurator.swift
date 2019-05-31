@@ -62,7 +62,10 @@ class PhotosViewCellConfigurator<Model: PhotoTableViewItem>: CellConfigurator {
     cell.bookmarkButtonTappedHandler = { [weak self] button in
       self?.bookmarkButtonTappedHandler?(button)
     }
-    
+    cell.photoImageViewTappedHandler = { [weak self] imageView in
+      self?.photoImageViewTappedHandler?(imageView)
+      
+    }
     return cell
   }
   
@@ -70,4 +73,5 @@ class PhotosViewCellConfigurator<Model: PhotoTableViewItem>: CellConfigurator {
   var sendButtonTappedHandler: ((UIButton) -> Void)?
   var downloadButtonTappedHandler: ((UIButton) -> Void)?
   var bookmarkButtonTappedHandler: ((UIButton) -> Void)?
+  var photoImageViewTappedHandler: ((UIImageView) -> Void)?
 }

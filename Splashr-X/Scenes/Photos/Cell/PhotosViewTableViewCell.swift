@@ -31,7 +31,15 @@ class PhotosViewTableViewCell: UITableViewCell {
   @IBOutlet weak var photoImageView: UIImageView! {
     didSet {
       photoImageView.apply(.fill)
+      let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(photoImageViewTapped(_:)))
+      addGestureRecognizer(tapGestureRecognizer)
     }
+  }
+  
+  var photoImageViewTappedHandler: ((UIImageView) -> Void)?
+
+  @objc private func photoImageViewTapped(_ sender: UITapGestureRecognizer) {
+    photoImageViewTappedHandler?(photoImageView)
   }
   
   @IBOutlet weak var locationLabel: UILabel!
@@ -53,25 +61,25 @@ class PhotosViewTableViewCell: UITableViewCell {
   
   var likeButtonTappedHandler: ((UIButton) -> Void)?
   
-  @IBAction func likeButtonTapped(_ sender: UIButton) {
+  @IBAction private func likeButtonTapped(_ sender: UIButton) {
     likeButtonTappedHandler?(sender)
   }
   
   var sendButtonTappedHandler: ((UIButton) -> Void)?
   
-  @IBAction func sendButtonTapped(_ sender: UIButton) {
+  @IBAction private func sendButtonTapped(_ sender: UIButton) {
     sendButtonTappedHandler?(sender)
   }
   
   var downloadButtonTappedHandler: ((UIButton) -> Void)?
 
-  @IBAction func downloadButtonTapped(_ sender: UIButton) {
+  @IBAction private func downloadButtonTapped(_ sender: UIButton) {
     downloadButtonTappedHandler?(sender)
   }
   
   var bookmarkButtonTappedHandler: ((UIButton) -> Void)?
 
-  @IBAction func bookmarkButtonTapped(_ sender: UIButton) {
+  @IBAction private func bookmarkButtonTapped(_ sender: UIButton) {
     bookmarkButtonTappedHandler?(sender)
   }
 }
