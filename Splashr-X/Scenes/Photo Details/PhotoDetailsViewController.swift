@@ -42,6 +42,22 @@ class PhotoDetailsViewController: UIViewController {
   }
   
   @objc private func downloadItemTapped(_ sender: UIBarButtonItem) {
-    print("download image")
+    guard let photo = photo else {
+      print("error, image is not available?!")
+      CustomHUD.showError(title: "Error", details: "Couldn't save photo")
+      return
+    }
+    
+    let alert = AlertPresenter.savePhotoToLibray { saveToPhotos in
+      if saveToPhotos {
+        self.savePhotoToAlbum(photo)
+      }
+    }
+    alert.present(in: self)
   }
+  
+  fileprivate func savePhotoToAlbum(_ photo: UIImage) {
+    PhotoLibraryManager.shared.save(photo)
+  }
+  
 }

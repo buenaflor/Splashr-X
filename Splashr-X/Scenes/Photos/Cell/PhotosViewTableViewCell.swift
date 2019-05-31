@@ -71,10 +71,14 @@ class PhotosViewTableViewCell: UITableViewCell {
     sendButtonTappedHandler?(sender)
   }
   
-  var downloadButtonTappedHandler: ((UIButton) -> Void)?
+  var downloadButtonTappedHandler: ((UIButton, UIImage) -> Void)?
 
   @IBAction private func downloadButtonTapped(_ sender: UIButton) {
-    downloadButtonTappedHandler?(sender)
+    guard let photo = photoImageView.image else {
+      print("error, no image??")
+      return
+    }
+    downloadButtonTappedHandler?(sender, photo)
   }
   
   var bookmarkButtonTappedHandler: ((UIButton) -> Void)?

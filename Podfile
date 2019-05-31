@@ -7,7 +7,7 @@ target 'Splashr-X' do
 
   # Pods for Splashr-X
   pod 'Nuke', '~> 7.0'
-  pod 'MBProgressHUD', '~> 1.1.0'
+  pod 'PKHUD', '~> 5.0'
 
   target 'Splashr-XTests' do
     inherit! :search_paths

@@ -21,8 +21,13 @@ extension PhotosViewController {
   }
   
   /// Download the photo at the indexPath
-  func downloadPhoto(_ button: UIButton, _ photo: PhotoTableViewItem) {
-    
+  func downloadPhoto(_ button: UIButton, _ photo: UIImage) {
+    let alert = AlertPresenter.savePhotoToLibray { saveToPhotos in
+      if saveToPhotos {
+        PhotoLibraryManager.shared.save(photo)
+      }
+    }
+    alert.present(in: self)
   }
   
   /// Bookmarks the photo but checks if user is logged in first

@@ -1,16 +1,20 @@
 PODS:
   - Nuke (7.6.3)
+  - PKHUD (5.2.1)
 
 DEPENDENCIES:
   - Nuke (~> 7.0)
+  - PKHUD (~> 5.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Nuke
+    - PKHUD
 
 SPEC CHECKSUMS:
   Nuke: 44130e95e09463f8773ae4b96b90de1eba6b3350
+  PKHUD: 4e6162c4c39ac367c6934e9855c6b4762ee16256
 
-PODFILE CHECKSUM: 05255c25266d60bb0ac4e23953c8b2a0c85daf3f
+PODFILE CHECKSUM: c0b75548ddeeac919c9d5f07a3456afb41112440
 
 COCOAPODS: 1.6.1
