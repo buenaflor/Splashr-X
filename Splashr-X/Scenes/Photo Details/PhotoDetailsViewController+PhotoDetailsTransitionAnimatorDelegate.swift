@@ -12,18 +12,20 @@ extension PhotoDetailsViewController: PhotoDetailsTransitionAnimatorDelegate {
   
   func transitionWillStart() {
     imageZoomView.isHidden = true
+    photoImageView.isHidden = true
   }
   
   func transitionDidEnd() {
     imageZoomView.isHidden = false
+    photoImageView.isHidden = false
   }
   
   var referenceImage: UIImage? {
-    return imageZoomView.imageView.image
+    return photo
   }
   
   var imageFrame: CGRect? {
-    let rect = CGRect.makeRect(aspectRatio: imageZoomView.imageView.image!.size, insideRect: imageZoomView.frame)
+    let rect = CGRect.makeRect(aspectRatio: photo!.size, insideRect: imageZoomView.frame)
     return rect
   }
 }

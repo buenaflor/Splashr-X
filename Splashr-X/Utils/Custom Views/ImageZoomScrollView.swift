@@ -12,16 +12,17 @@ class ImageZoomScrollView: UIScrollView, UIScrollViewDelegate {
   
   var imageView = UIImageView()
   
-  func configure() {
+  func configure(topBarHeight: CGFloat) {
     if let width = imageView.image?.size.width,
       let height = imageView.image?.size.height {
       let ratio = width / height
       let newHeight = frame.width / ratio
-      let rect = CGRect(x: 0.0, y: 0.0, width: frame.width, height: newHeight)
-      imageView.frame = rect
+      imageView.frame = CGRect(x: 0.0, y: 0.0, width: frame.width, height: newHeight)
       imageView.center = scrollViewCenter
-      imageView.center.y -= 88
+      imageView.center.y -= topBarHeight
+      contentSize = CGSize(width: frame.width, height: newHeight)
     }
+    
     imageView.apply(.fill)
     addSubview(imageView)
     
@@ -54,7 +55,7 @@ class ImageZoomScrollView: UIScrollView, UIScrollViewDelegate {
       setZoomScale(1, animated: true)
     }
   }
-    
+  
   // Tell the scroll view delegate which view to use for zooming and scrolling
   func viewForZooming(in scrollView: UIScrollView) -> UIView? {
     return imageView

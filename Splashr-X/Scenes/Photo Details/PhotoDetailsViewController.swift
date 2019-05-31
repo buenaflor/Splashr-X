@@ -12,6 +12,14 @@ class PhotoDetailsViewController: UIViewController {
   
   var photo: UIImage?
   var details: PhotoTableViewItem?
+  var toFrame: CGRect = .zero {
+    didSet {
+      imageZoomView.configure(topBarHeight: topbarHeight)
+      
+    }
+  }
+  
+  @IBOutlet weak var photoImageView: UIImageView!
   
   @IBOutlet weak var imageZoomView: ImageZoomScrollView!
   
@@ -37,8 +45,8 @@ class PhotoDetailsViewController: UIViewController {
   }
   
   fileprivate func configurePhotoImageView() {
+//    photoImageView.image = photo
     imageZoomView.imageView.image = photo
-    imageZoomView.configure()
   }
   
   @objc private func downloadItemTapped(_ sender: UIBarButtonItem) {

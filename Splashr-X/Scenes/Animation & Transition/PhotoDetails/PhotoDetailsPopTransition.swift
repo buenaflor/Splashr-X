@@ -73,12 +73,7 @@ class PhotoDetailsPopTransition: NSObject, UIViewControllerAnimatedTransitioning
                           alongside: animator)
     animator.startAnimation()
     
-    // HACK: By delaying 0.005s, I get a layout-refresh on the toViewController,
-    // which means its collectionview has updated its layout,
-    // and our toDelegate?.imageFrame() is accurate, even if
-    // the device has rotated. :scream_cat:
-//    DispatchQueue.main.asyncAfter(deadline: .now() + 0.005) {
-      animator.addAnimations {
+    animator.addAnimations {
         let toReferenceFrame = self.toDelegate.imageFrame ??
           PhotoDetailsPopTransition.defaultOffscreenFrameForDismissal(
             transitionImageSize: fromReferenceFrame.size,
@@ -86,7 +81,6 @@ class PhotoDetailsPopTransition: NSObject, UIViewControllerAnimatedTransitioning
         )
         self.transitionImageView.frame = toReferenceFrame
       }
-//    }
   }
   
   /// If we need a "dummy reference frame", let's throw the image off the bottom of the screen.

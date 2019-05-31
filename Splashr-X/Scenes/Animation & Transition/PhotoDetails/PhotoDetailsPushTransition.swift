@@ -51,6 +51,17 @@ class PhotoDetailsPushTransition: NSObject, UIViewControllerAnimatedTransitionin
       ?? PhotoDetailsPushTransition.defaultOffscreenFrameForPresentation(image: transitionImage, forView: toView!)
     let toReferenceFrame = PhotoDetailsPushTransition.calculateZoomInImageFrame(image: transitionImage, forView: toView!)
     containerView.addSubview(self.transitionImageView)
+    photoDetailsVC.toFrame = toReferenceFrame
+    guard let photo = photoDetailsVC.photo else {
+      print("animation failed")
+      return
+    }
+    let width = photo.size.width
+    let height = photo.size.height
+    let ratio = width / height
+    let newHeight = toReferenceFrame.width / ratio
+    let center = photoDetailsVC.imageZoomView.scrollViewCenter
+    let toRect = CGRect(x: 0.0, y: 0.0, width: toReferenceFrame.width, height: newHeight)
     
     self.fromDelegate.transitionWillStart()
     self.photoDetailsVC.transitionWillStart()
@@ -58,7 +69,8 @@ class PhotoDetailsPushTransition: NSObject, UIViewControllerAnimatedTransitionin
     let duration = self.transitionDuration(using: transitionContext)
     let spring: CGFloat = 0.95
     let animator = UIViewPropertyAnimator(duration: duration, dampingRatio: spring) {
-      self.transitionImageView.frame = toReferenceFrame
+      self.transitionImageView.frame = toRect
+      self.transitionImageView.center = center
       toView?.alpha = 1
     }
     animator.addCompletion { (position) in
@@ -89,5 +101,17 @@ class PhotoDetailsPushTransition: NSObject, UIViewControllerAnimatedTransitionin
   private static func calculateZoomInImageFrame(image: UIImage, forView view: UIView) -> CGRect {
     let rect = CGRect.makeRect(aspectRatio: image.size, insideRect: view.bounds)
     return rect
+  }
+}
+
+extension UIViewController {
+  
+  /**
+   *  Height of status bar + navigation bar (if navigation bar exist)
+   */
+  
+  var topbarHeight: CGFloat {
+    return UIApplication.shared.statusBarFrame.size.height +
+      (self.navigationController?.navigationBar.frame.height ?? 0.0)
   }
 }
