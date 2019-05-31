@@ -11,7 +11,6 @@ import UIKit
 class PhotoDetailsPopTransition: NSObject, UIViewControllerAnimatedTransitioning {
   fileprivate let toDelegate: PhotoDetailsTransitionAnimatorDelegate
   fileprivate let photoDetailVC: PhotoDetailsViewController
-  fileprivate let navigationController: UINavigationController
   
   /// The snapshotView that is animating between the two view controllers.
   fileprivate let transitionImageView: UIImageView = {
@@ -23,18 +22,13 @@ class PhotoDetailsPopTransition: NSObject, UIViewControllerAnimatedTransitioning
   }()
   
   /// If toDelegate isn't PhotoDetailTransitionAnimatorDelegate, returns nil.
-  init?(
-    toDelegate: Any,
-    fromPhotoDetailsVC photoDetailVC: PhotoDetailsViewController,
-    navigationController: UINavigationController
-    ) {
+  init?(toDelegate: Any, fromPhotoDetailsVC photoDetailVC: PhotoDetailsViewController) {
     guard let toDelegate = toDelegate as? PhotoDetailsTransitionAnimatorDelegate else {
       return nil
     }
     
     self.toDelegate = toDelegate
     self.photoDetailVC = photoDetailVC
-    self.navigationController = navigationController
   }
   
   func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {

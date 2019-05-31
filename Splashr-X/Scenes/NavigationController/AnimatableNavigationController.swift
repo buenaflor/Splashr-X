@@ -40,9 +40,9 @@ extension AnimatableNavigationController: UINavigationControllerDelegate {
     var result: UIViewControllerAnimatedTransitioning?
     
     if let photoDetailsVC = toVC as? PhotoDetailsViewController, operation == .push {
-      result = PhotoDetailsPushTransition(fromDelegate: fromVC, toPhotoDetailsVC: photoDetailsVC, navigationController: navigationController)
+      result = PhotoDetailsPushTransition(fromDelegate: fromVC, toPhotoDetailsVC: photoDetailsVC)
     } else if let photoDetailsVC = fromVC as? PhotoDetailsViewController, operation == .pop {
-      result = PhotoDetailsPopTransition(toDelegate: toVC, fromPhotoDetailsVC: photoDetailsVC, navigationController: navigationController)
+      result = PhotoDetailsPopTransition(toDelegate: toVC, fromPhotoDetailsVC: photoDetailsVC)
     }
     
     self.currentAnimationTransition = result

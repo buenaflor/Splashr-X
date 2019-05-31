@@ -12,7 +12,6 @@ class PhotoDetailsPushTransition: NSObject, UIViewControllerAnimatedTransitionin
   
   fileprivate let fromDelegate: PhotoDetailsTransitionAnimatorDelegate
   fileprivate let photoDetailsVC : PhotoDetailsViewController
-  fileprivate let navigationController: UINavigationController
   
   fileprivate let transitionImageView: UIImageView = {
     let imageView = UIImageView()
@@ -21,13 +20,12 @@ class PhotoDetailsPushTransition: NSObject, UIViewControllerAnimatedTransitionin
     return imageView
   }()
   
-  init?(fromDelegate: Any, toPhotoDetailsVC photoDetailsVC: PhotoDetailsViewController, navigationController: UINavigationController) {
+  init?(fromDelegate: Any, toPhotoDetailsVC photoDetailsVC: PhotoDetailsViewController) {
     guard let fromDelegate = fromDelegate as? PhotoDetailsTransitionAnimatorDelegate else {
       return nil
     }
     self.fromDelegate = fromDelegate
     self.photoDetailsVC = photoDetailsVC
-    self.navigationController = navigationController
   }
   
   func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {

@@ -17,7 +17,7 @@ class PhotoDetailsViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+
     configureViewController()
     configurePhotoImageView()
     
@@ -26,16 +26,19 @@ class PhotoDetailsViewController: UIViewController {
     }
   }
   
-  fileprivate func configureViewController() {
-    view.backgroundColor = .black
-    navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+  fileprivate func setNavigationBarAppearance() {
+    navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
     navigationController?.navigationBar.shadowImage = UIImage()
     navigationController?.navigationBar.isTranslucent = true
     navigationController?.navigationBar.tintColor = .white
+  }
+  
+  fileprivate func configureViewController() {
+    view.backgroundColor = .black
+    setNavigationBarAppearance()
   }
   
   fileprivate func configurePhotoImageView() {
     photoImageView.image = photo
   }
 }
-

@@ -67,10 +67,21 @@ class PhotosViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    navigationController?.delegate = navigationController as? AnimatableNavigationController
-    
     // Fetches the very first page
     fetchPhotos()
+  }
+
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    // Configures the view controller
+    configureViewControllerForAppearance()
+  }
+  
+  /// Configures the view controller when it is about to appear
+  fileprivate func configureViewControllerForAppearance() {
+    title = "Photos List"
+    navigationController?.delegate = navigationController as? AnimatableNavigationController
   }
   
   /// Handles the fetching of the photos
@@ -93,6 +104,11 @@ class PhotosViewController: UIViewController {
     //      print("waitin for connectivity in photos vc")
     //    }
   }
+  
+//  override var isViewLoaded: Bool {
+//    navigationController?.navigationBar.barTintColor = .white
+//    return super.isViewLoaded
+//  }
 }
 
 // MARK: - Fetching implementation

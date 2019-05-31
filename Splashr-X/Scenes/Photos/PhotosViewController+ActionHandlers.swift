@@ -37,9 +37,13 @@ extension PhotosViewController {
       return
     }
     
-    // Set the cell so the transition knows the frame and the imageView
-    tappedCell = cell
+    // Scroll to the row so we don't come across navigation bar transition bugs
+    if let indexPath = tableView.indexPath(for: cell) {
+      tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+    }
     
+    title = ""
+    tappedCell = cell
     let scene = Scene.photoDetails(photo, details)
     SceneCoordinator.shared.transition(to: scene)
   }
