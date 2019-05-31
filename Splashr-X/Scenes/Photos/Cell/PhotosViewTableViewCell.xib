@@ -223,7 +223,7 @@
         </view>
     </objects>
     <resources>
-        <image name="arrow_down" width="25" height="25"/>
+        <image name="arrow_down" width="24" height="24"/>
         <image name="bookmark_outlined" width="20" height="20"/>
         <image name="heart_outlined" width="25" height="25"/>
         <image name="send_outlined" width="25" height="25"/>

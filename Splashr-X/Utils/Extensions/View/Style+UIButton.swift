@@ -33,6 +33,13 @@ extension ViewStyle where T: UIView {
       return $0
     }
   }
+  
+  static var cornered: ViewStyle<T> {
+    return ViewStyle<T> {
+      $0.layer.cornerRadius = 7.5
+      return $0
+    }
+  }
 }
 
 extension ViewStyle where T: UIImageView {

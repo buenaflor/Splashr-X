@@ -12,7 +12,8 @@ extension PhotosViewController {
   
   /// Likes a user photo but checks if user is logged in first
   func likePhoto(_ button: UIButton, _ photo: PhotoTableViewItem) {
-
+    let scene = Scene.login
+    SceneCoordinator.shared.transition(to: scene)
   }
   
   /// Sends/Share the photo based on the actions

@@ -34,6 +34,6 @@ extension UITableView {
       for: indexPath
     )
   }
-  
+
 }
 

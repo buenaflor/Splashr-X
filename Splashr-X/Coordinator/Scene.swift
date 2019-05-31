@@ -19,6 +19,9 @@ enum Scene {
   
   /// The details of a photo
   case photoDetails(UIImage, PhotoTableViewItem)
+  
+  /// The login page
+  case login
 }
 
 extension Scene: TargetScene {
@@ -31,6 +34,9 @@ extension Scene: TargetScene {
     case let .photoDetails(photo, details):
       let photoDetailsVC = PhotoDetailsViewController.instantiate(photo: photo, details: details)
       return .push(photoDetailsVC)
+    case .login:
+      let loginVC = LoginViewController()
+      return .present(loginVC)
     }
   }
 }
