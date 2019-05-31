@@ -39,8 +39,8 @@ class PhotosViewDataSourceProvider<Model: PhotoTableViewItem>: NSObject, TableVi
       cell.likeButtonTappedHandler = { [weak self] button in
         self?.likeButtonTappedHandler?(button, model)
       }
-      cell.sendButtonTappedHandler = { [weak self] button in
-        self?.sendButtonTappedHandler?(button, model)
+      cell.sendButtonTappedHandler = { [weak self] button, photo in
+        self?.sendButtonTappedHandler?(button, photo)
       }
       cell.downloadButtonTappedHandler = { [weak self] button, photo in
         self?.downloadButtonTappedHandler?(button, photo)
@@ -57,7 +57,7 @@ class PhotosViewDataSourceProvider<Model: PhotoTableViewItem>: NSObject, TableVi
   }
   
   var likeButtonTappedHandler: ((UIButton, PhotoTableViewItem) -> Void)?
-  var sendButtonTappedHandler: ((UIButton, PhotoTableViewItem) -> Void)?
+  var sendButtonTappedHandler: ((UIButton, UIImage) -> Void)?
   var downloadButtonTappedHandler: ((UIButton, UIImage) -> Void)?
   var bookmarkButtonTappedHandler: ((UIButton, PhotoTableViewItem) -> Void)?
   var photoImageViewTappedHandler: ((UIImageView, PhotoTableViewItem, UITableViewCell) -> Void)?

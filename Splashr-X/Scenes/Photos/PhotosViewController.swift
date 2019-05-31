@@ -28,8 +28,8 @@ class PhotosViewController: UIViewController {
       photosViewDataSourceProvider?.prefetchCollections = { [weak self] in
         self?.fetchPhotos()
       }
-      photosViewDataSourceProvider?.likeButtonTappedHandler = { [weak self] button, photo in
-        self?.likePhoto(button, photo)
+      photosViewDataSourceProvider?.likeButtonTappedHandler = { [weak self] button, details in
+        self?.likePhoto(button, details)
       }
       photosViewDataSourceProvider?.sendButtonTappedHandler = { [weak self] button, photo in
         self?.sendPhoto(button, photo)
@@ -37,11 +37,11 @@ class PhotosViewController: UIViewController {
       photosViewDataSourceProvider?.downloadButtonTappedHandler = { [weak self] button, photo in
         self?.downloadPhoto(button, photo)
       }
-      photosViewDataSourceProvider?.bookmarkButtonTappedHandler = { [weak self] button, photo in
-        self?.bookmarkPhoto(button, photo)
+      photosViewDataSourceProvider?.bookmarkButtonTappedHandler = { [weak self] button, details in
+        self?.bookmarkPhoto(button, details)
       }
-      photosViewDataSourceProvider?.photoImageViewTappedHandler = { [weak self] imageView, photo, cell in
-        self?.showPhotoDetails(imageView, photo, cell)
+      photosViewDataSourceProvider?.photoImageViewTappedHandler = { [weak self] imageView, details, cell in
+        self?.showPhotoDetails(imageView, details, cell)
       }
     }
   }

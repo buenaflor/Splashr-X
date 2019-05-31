@@ -16,8 +16,17 @@ extension PhotosViewController {
   }
   
   /// Sends/Share the photo based on the actions
-  func sendPhoto(_ button: UIButton, _ photo: PhotoTableViewItem) {
+  func sendPhoto(_ button: UIButton, _ photo: UIImage) {
+    // set up activity view controller
+    let imageToShare = [ photo ]
+    let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
+    activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
     
+    // exclude some activity types from the list (optional)
+    activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.saveToCameraRoll ]
+    
+    // present the view controller
+    self.present(activityViewController, animated: true, completion: nil)
   }
   
   /// Download the photo at the indexPath
