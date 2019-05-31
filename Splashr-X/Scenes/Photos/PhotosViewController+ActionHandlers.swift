@@ -42,8 +42,12 @@ extension PhotosViewController {
       tableView.scrollToRow(at: indexPath, at: .top, animated: true)
     }
     
+    // Setting an empty title so the back button text is gone in Photo Details
     title = ""
+    
+    // Assigning the tapped cell so we are aware which cell has been clicked -> used in the animation
     tappedCell = cell
+    
     let scene = Scene.photoDetails(photo, details)
     SceneCoordinator.shared.transition(to: scene)
   }
