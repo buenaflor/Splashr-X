@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhotoDetailsViewController" customModule="Splashr_X" customModuleProvider="target">
             <connections>
-                <outlet property="photoImageView" destination="N73-do-08s" id="2W6-MF-QKi"/>
+                <outlet property="imageZoomView" destination="qhC-Si-5RT" id="bka-Hh-mm7"/>
                 <outlet property="view" destination="iN0-l3-epB" id="cdA-q1-dVm"/>
             </connections>
         </placeholder>
@@ -20,16 +20,16 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N73-do-08s">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qhC-Si-5RT" customClass="ImageZoomScrollView" customModule="Splashr_X" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                </imageView>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="N73-do-08s" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="E1K-CS-KCN"/>
-                <constraint firstAttribute="trailing" secondItem="N73-do-08s" secondAttribute="trailing" id="JZv-7O-aCI"/>
-                <constraint firstAttribute="bottom" secondItem="N73-do-08s" secondAttribute="bottom" id="PLL-rl-j79"/>
-                <constraint firstItem="N73-do-08s" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="j1T-f3-pco"/>
+                <constraint firstItem="qhC-Si-5RT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="6Sz-u4-VJb"/>
+                <constraint firstAttribute="trailing" secondItem="qhC-Si-5RT" secondAttribute="trailing" id="MAF-Bh-ifk"/>
+                <constraint firstItem="qhC-Si-5RT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="nd2-iJ-Os3"/>
+                <constraint firstAttribute="bottom" secondItem="qhC-Si-5RT" secondAttribute="bottom" id="vhD-HI-7Ec"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>

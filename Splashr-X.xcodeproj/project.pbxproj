@@ -21,6 +21,7 @@
 		3409098522A09470007A1062 /* PhotoDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3409098422A09470007A1062 /* PhotoDetailsViewController.xib */; };
 		3409098722A09814007A1062 /* PhotoDetailsPopTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3409098622A09814007A1062 /* PhotoDetailsPopTransition.swift */; };
 		3409098A22A0A89A007A1062 /* PhotoDetailsViewController+PhotoDetailsTransitionAnimatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3409098922A0A89A007A1062 /* PhotoDetailsViewController+PhotoDetailsTransitionAnimatorDelegate.swift */; };
+		3409098C22A140C9007A1062 /* ImageZoomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3409098B22A140C9007A1062 /* ImageZoomScrollView.swift */; };
 		342EF5F4229F0F8500B3E6EC /* CollectionsViewCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342EF5F3229F0F8500B3E6EC /* CollectionsViewCellConfigurator.swift */; };
 		342EF5F6229F1C7000B3E6EC /* PhotosRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342EF5F5229F1C7000B3E6EC /* PhotosRepo.swift */; };
 		342EF5F9229F1CFB00B3E6EC /* CollectionsRepoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342EF5F8229F1CFB00B3E6EC /* CollectionsRepoType.swift */; };
@@ -126,6 +127,7 @@
 		3409098422A09470007A1062 /* PhotoDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoDetailsViewController.xib; sourceTree = "<group>"; };
 		3409098622A09814007A1062 /* PhotoDetailsPopTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsPopTransition.swift; sourceTree = "<group>"; };
 		3409098922A0A89A007A1062 /* PhotoDetailsViewController+PhotoDetailsTransitionAnimatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoDetailsViewController+PhotoDetailsTransitionAnimatorDelegate.swift"; sourceTree = "<group>"; };
+		3409098B22A140C9007A1062 /* ImageZoomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageZoomScrollView.swift; sourceTree = "<group>"; };
 		342EF5F3229F0F8500B3E6EC /* CollectionsViewCellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionsViewCellConfigurator.swift; sourceTree = "<group>"; };
 		342EF5F5229F1C7000B3E6EC /* PhotosRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosRepo.swift; sourceTree = "<group>"; };
 		342EF5F8229F1CFB00B3E6EC /* CollectionsRepoType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsRepoType.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				3409096B22A07CB1007A1062 /* VerticalTopAlignLabel.swift */,
+				3409098B22A140C9007A1062 /* ImageZoomScrollView.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -874,6 +877,7 @@
 				3454DF29229AF41F00EA3592 /* URLRequest+Extensions.swift in Sources */,
 				3409098222A08FC2007A1062 /* AnimatableNavigationController.swift in Sources */,
 				3454DF3B229AF56200EA3592 /* SceneCoordinator.swift in Sources */,
+				3409098C22A140C9007A1062 /* ImageZoomScrollView.swift in Sources */,
 				3409097622A089BE007A1062 /* PhotoDetailsPushTransition.swift in Sources */,
 				34816CB5229C79E400000724 /* Unsplash.swift in Sources */,
 				342EF5F4229F0F8500B3E6EC /* CollectionsViewCellConfigurator.swift in Sources */,

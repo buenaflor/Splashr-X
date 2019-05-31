@@ -73,6 +73,7 @@ class PhotoDetailsPushTransition: NSObject, UIViewControllerAnimatedTransitionin
     fromVCTabBarController?.setTabBar(hidden: true,
                                       animated: true,
                                       alongside: animator)
+
     animator.startAnimation()
   }
   

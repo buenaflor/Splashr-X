@@ -13,20 +13,18 @@ class PhotoDetailsViewController: UIViewController {
   var photo: UIImage?
   var details: PhotoTableViewItem?
   
-  @IBOutlet weak var photoImageView: UIImageView!
+  @IBOutlet weak var imageZoomView: ImageZoomScrollView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
 
     configureViewController()
     configurePhotoImageView()
-    
-    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-      self.navigationController?.popViewController(animated: true)
-    }
   }
   
   fileprivate func setNavigationBarAppearance() {
+    let downloadItem = UIBarButtonItem(image: #imageLiteral(resourceName: "arrow_down"), style: .plain, target: self, action: #selector(downloadItemTapped(_:)))
+    navigationItem.rightBarButtonItem = downloadItem
     navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
     navigationController?.navigationBar.shadowImage = UIImage()
     navigationController?.navigationBar.isTranslucent = true
@@ -39,6 +37,11 @@ class PhotoDetailsViewController: UIViewController {
   }
   
   fileprivate func configurePhotoImageView() {
-    photoImageView.image = photo
+    imageZoomView.imageView.image = photo
+    imageZoomView.configure()
+  }
+  
+  @objc private func downloadItemTapped(_ sender: UIBarButtonItem) {
+    print("download image")
   }
 }
