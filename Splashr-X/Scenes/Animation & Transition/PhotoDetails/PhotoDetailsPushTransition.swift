@@ -51,7 +51,7 @@ class PhotoDetailsPushTransition: NSObject, UIViewControllerAnimatedTransitionin
       ?? PhotoDetailsPushTransition.defaultOffscreenFrameForPresentation(image: transitionImage, forView: toView!)
     let toReferenceFrame = PhotoDetailsPushTransition.calculateZoomInImageFrame(image: transitionImage, forView: toView!)
     containerView.addSubview(self.transitionImageView)
-    photoDetailsVC.toFrame = toReferenceFrame
+
     guard let photo = photoDetailsVC.photo else {
       print("animation failed")
       return
@@ -60,7 +60,11 @@ class PhotoDetailsPushTransition: NSObject, UIViewControllerAnimatedTransitionin
     let height = photo.size.height
     let ratio = width / height
     let newHeight = toReferenceFrame.width / ratio
-    let center = photoDetailsVC.imageZoomView.scrollViewCenter
+    
+    var center = photoDetailsVC.view.center
+    // += 10 so we have a little padding. or else the view will stick to the navbar on devices with smaller res'
+    center.y += 10
+    
     let toRect = CGRect(x: 0.0, y: 0.0, width: toReferenceFrame.width, height: newHeight)
     
     self.fromDelegate.transitionWillStart()

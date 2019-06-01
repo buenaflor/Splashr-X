@@ -12,7 +12,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhotoDetailsViewController" customModule="Splashr_X" customModuleProvider="target">
             <connections>
                 <outlet property="imageZoomView" destination="qhC-Si-5RT" id="bka-Hh-mm7"/>
-                <outlet property="photoImageView" destination="sJJ-PI-hM8" id="miO-Vg-jmS"/>
                 <outlet property="view" destination="iN0-l3-epB" id="cdA-q1-dVm"/>
             </connections>
         </placeholder>
@@ -24,18 +23,11 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qhC-Si-5RT" customClass="ImageZoomScrollView" customModule="Splashr_X" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </scrollView>
-                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sJJ-PI-hM8">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="qhC-Si-5RT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="6Sz-u4-VJb"/>
                 <constraint firstAttribute="trailing" secondItem="qhC-Si-5RT" secondAttribute="trailing" id="MAF-Bh-ifk"/>
-                <constraint firstAttribute="trailing" secondItem="sJJ-PI-hM8" secondAttribute="trailing" id="dSe-B6-Xa9"/>
-                <constraint firstItem="sJJ-PI-hM8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="edJ-tK-Ria"/>
-                <constraint firstItem="sJJ-PI-hM8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="l3r-4x-SU0"/>
-                <constraint firstAttribute="bottom" secondItem="sJJ-PI-hM8" secondAttribute="bottom" id="myR-NW-RpF"/>
                 <constraint firstItem="qhC-Si-5RT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="nd2-iJ-Os3"/>
                 <constraint firstAttribute="bottom" secondItem="qhC-Si-5RT" secondAttribute="bottom" id="vhD-HI-7Ec"/>
             </constraints>

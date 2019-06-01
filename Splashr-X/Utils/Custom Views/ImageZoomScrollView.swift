@@ -18,8 +18,6 @@ class ImageZoomScrollView: UIScrollView, UIScrollViewDelegate {
       let ratio = width / height
       let newHeight = frame.width / ratio
       imageView.frame = CGRect(x: 0.0, y: 0.0, width: frame.width, height: newHeight)
-      imageView.center = scrollViewCenter
-      imageView.center.y -= topBarHeight
       contentSize = CGSize(width: frame.width, height: newHeight)
     }
     

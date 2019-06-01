@@ -42,7 +42,11 @@ extension AnimatableNavigationController: UINavigationControllerDelegate {
     if let photoDetailsVC = toVC as? PhotoDetailsViewController, operation == .push {
       result = PhotoDetailsPushTransition(fromDelegate: fromVC, toPhotoDetailsVC: photoDetailsVC)
     } else if let photoDetailsVC = fromVC as? PhotoDetailsViewController, operation == .pop {
-      result = PhotoDetailsPopTransition(toDelegate: toVC, fromPhotoDetailsVC: photoDetailsVC)
+      if photoDetailsVC.isInteractivelyDismissing {
+        result = PhotoDetailsInteractiveDismissTransition(fromDelegate: photoDetailsVC, toDelegate: toVC)
+      } else {
+        result = PhotoDetailsPopTransition(toDelegate: toVC, fromPhotoDetailsVC: photoDetailsVC)
+      }
     }
     
     self.currentAnimationTransition = result

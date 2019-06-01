@@ -12,12 +12,10 @@ extension PhotoDetailsViewController: PhotoDetailsTransitionAnimatorDelegate {
   
   func transitionWillStart() {
     imageZoomView.isHidden = true
-    photoImageView.isHidden = true
   }
   
   func transitionDidEnd() {
     imageZoomView.isHidden = false
-    photoImageView.isHidden = false
   }
   
   var referenceImage: UIImage? {
