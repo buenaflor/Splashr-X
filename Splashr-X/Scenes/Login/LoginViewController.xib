@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="Splashr_X" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="P7S-xU-jf8" id="aWP-Va-EWI"/>
+                <outlet property="dismissButton" destination="6zW-dK-l3b" id="2jp-et-xYq"/>
                 <outlet property="loginButton" destination="BeE-vJ-Q8c" id="ve8-Hy-hgj"/>
                 <outlet property="view" destination="iN0-l3-epB" id="NlS-Mv-ZQn"/>
             </connections>
@@ -45,6 +46,30 @@
                         <action selector="loginButtonTapped:" destination="-1" eventType="touchUpInside" id="AjA-7a-swx"/>
                     </connections>
                 </button>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Y1R-SY-rzH">
+                    <rect key="frame" x="30" y="611" width="354" height="85"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Splashr-X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q9N-Kr-nkn" userLabel="Title Label">
+                            <rect key="frame" x="21.5" y="0.0" width="311" height="36"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Free High-Quality Images" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mwe-cr-3Lk" userLabel="Subtitle Label">
+                            <rect key="frame" x="37.5" y="56" width="279" height="29"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6zW-dK-l3b">
+                    <rect key="frame" x="30" y="60" width="24" height="24"/>
+                    <state key="normal" image="dropdown_arrow"/>
+                    <connections>
+                        <action selector="dismissButtonTapped:" destination="-1" eventType="touchUpInside" id="IY9-b4-nWf"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -52,11 +77,19 @@
                 <constraint firstItem="BeE-vJ-Q8c" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="35" id="KK3-SC-40J"/>
                 <constraint firstItem="P7S-xU-jf8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="UXm-b5-ady"/>
                 <constraint firstAttribute="trailing" secondItem="BeE-vJ-Q8c" secondAttribute="trailing" constant="35" id="UbB-EE-U3P"/>
+                <constraint firstItem="Y1R-SY-rzH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="ViF-M8-9aL"/>
+                <constraint firstItem="Y1R-SY-rzH" firstAttribute="bottom" secondItem="BeE-vJ-Q8c" secondAttribute="top" constant="-100" id="YsH-0O-r1x"/>
                 <constraint firstAttribute="trailing" secondItem="P7S-xU-jf8" secondAttribute="trailing" id="c4s-xB-dc9"/>
                 <constraint firstAttribute="bottom" secondItem="P7S-xU-jf8" secondAttribute="bottom" id="cOa-OL-21G"/>
+                <constraint firstItem="6zW-dK-l3b" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="jCk-jw-viR"/>
+                <constraint firstItem="6zW-dK-l3b" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="60" id="loI-6y-et2"/>
+                <constraint firstAttribute="trailing" secondItem="Y1R-SY-rzH" secondAttribute="trailing" constant="30" id="qt1-3v-Xpa"/>
                 <constraint firstAttribute="bottom" secondItem="BeE-vJ-Q8c" secondAttribute="bottom" constant="50" id="y3y-gp-iPn"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
+    <resources>
+        <image name="dropdown_arrow" width="24" height="24"/>
+    </resources>
 </document>

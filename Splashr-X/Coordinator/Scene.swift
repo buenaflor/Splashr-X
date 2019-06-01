@@ -21,7 +21,8 @@ enum Scene {
   case photoDetails(UIImage, PhotoTableViewItem)
   
   /// The login page
-  case login
+  // TODO: Fix retain cycle in associated values or find a work around
+  //    case login(DismissAnimatable?)
 }
 
 extension Scene: TargetScene {
@@ -34,10 +35,10 @@ extension Scene: TargetScene {
     case let .photoDetails(photo, details):
       let photoDetailsVC = PhotoDetailsViewController.instantiate(photo: photo, details: details)
       return .push(photoDetailsVC)
-    case .login:
-      let loginVC = LoginViewController()
-      return .present(loginVC)
+//    case let .login(dismissAnimatable):
+//      let loginVC = LoginViewController()
+//      loginVC.dismissAnimatable = dismissAnimatable
+//      return .present(loginVC)
     }
   }
 }
-

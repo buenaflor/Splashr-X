@@ -8,12 +8,24 @@
 
 import UIKit
 
+protocol DismissAnimatable {
+  var delegate: UIViewControllerTransitioningDelegate? { get }
+  var interactor: DismissInteractor { get }
+}
+
+extension PhotosViewController: DismissAnimatable {
+  weak var delegate: UIViewControllerTransitioningDelegate? {
+    return self
+  }
+}
+
 extension PhotosViewController {
   
   /// Likes a user photo but checks if user is logged in first
   func likePhoto(_ button: UIButton, _ photo: PhotoTableViewItem) {
-    let scene = Scene.login
-    SceneCoordinator.shared.transition(to: scene)
+    // For now we don't use our coordinator due to retain cycle problems
+    let loginVC = LoginViewController.instantiate(dismissAnimatable: self)
+    present(loginVC, animated: true)
   }
   
   /// Sends/Share the photo based on the actions

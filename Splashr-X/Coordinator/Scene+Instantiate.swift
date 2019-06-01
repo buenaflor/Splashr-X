@@ -39,5 +39,12 @@ extension PhotoDetailsViewController {
     photoDetailsVC.details = details
     return photoDetailsVC
   }
+}
 
+extension LoginViewController {
+  static func instantiate(dismissAnimatable: DismissAnimatable) -> LoginViewController {
+    let loginVC = LoginViewController()
+    loginVC.dismissAnimatable = dismissAnimatable
+    return loginVC
+  }
 }

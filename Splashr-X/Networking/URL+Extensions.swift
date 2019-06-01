@@ -16,4 +16,12 @@ extension URL {
     return urlComponents.url!
   }
   
+  func value(for queryKey: String) -> String? {
+    guard let items = URLComponents(string: absoluteString)?.queryItems else { return nil }
+    for item in items where item.name == queryKey {
+      return item.value
+    }
+    return nil
+  }
+  
 }

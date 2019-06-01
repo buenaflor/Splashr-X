@@ -12,11 +12,19 @@ class LoginImagePreviewCollectionViewCell: UICollectionViewCell {
   
   let photoImageView = UIImageView()
   
+  private let darkView = UIView()
+  
   override init(frame: CGRect) {
     super.init(frame: frame)
-    photoImageView.frame = frame
+    let screenFrame = CGRect(x: 0.0, y: 0.0, width: frame.width, height: frame.height)
+    photoImageView.frame = screenFrame
+    darkView.frame = screenFrame
+    
     photoImageView.apply(.fill)
     addSubview(photoImageView)
+    
+    darkView.apply(.darkTransparent)
+    addSubview(darkView)
   }
   
   required init?(coder aDecoder: NSCoder) {

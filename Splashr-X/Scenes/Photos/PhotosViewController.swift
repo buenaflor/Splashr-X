@@ -77,7 +77,7 @@ class PhotosViewController: UIViewController {
     // Configures the view controller
     configureViewControllerForAppearance()
   }
-  
+    
   /// Configures the view controller when it is about to appear
   fileprivate func configureViewControllerForAppearance() {
     title = "Photos List"
@@ -105,10 +105,7 @@ class PhotosViewController: UIViewController {
     //    }
   }
   
-//  override var isViewLoaded: Bool {
-//    navigationController?.navigationBar.barTintColor = .white
-//    return super.isViewLoaded
-//  }
+  let interactor = DismissInteractor()
 }
 
 // MARK: - Fetching implementation
@@ -148,3 +145,12 @@ fileprivate extension PhotosViewController {
   }
 }
 
+extension PhotosViewController: UIViewControllerTransitioningDelegate {
+  func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    return DismissAnimator()
+  }
+  
+  func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+    return interactor.hasStarted ? interactor : nil
+  }
+}

@@ -18,6 +18,15 @@ extension ViewStyle where T: UIView {
 }
 
 extension ViewStyle where T: UIView {
+  
+  static var darkTransparent: ViewStyle<T> {
+    return ViewStyle<T> {
+      $0.backgroundColor = .black
+      $0.alpha = 0.25
+      return $0
+    }
+  }
+  
   static var bordered: ViewStyle<T> {
     return ViewStyle<T> {
       $0.layer.borderWidth = 0.4
