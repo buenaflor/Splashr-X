@@ -11,6 +11,8 @@ import AuthenticationServices
 
 class LoginViewController: UIViewController {
   
+  var authenticationRepoType: AuthenticationRepoType?
+  
   var dismissAnimatable: DismissAnimatable? {
     didSet {
       transitioningDelegate = dismissAnimatable?.delegate
@@ -133,38 +135,18 @@ class LoginViewController: UIViewController {
   
   // MARK: Authentication
   
-  private var _authSession: Any?
-  private var authSession: ASWebAuthenticationSession? {
-    get {
-      return _authSession as? ASWebAuthenticationSession
-    }
-    set {
-      _authSession = newValue
-    }
-  }
-  
-  let authManager = UnsplashAuthenticationManager.shared
-
-  private func authenticate() {
-    authManager.delegate = self
-    let authURL = authManager.authURL
-    let callbackURLScheme = Configuration.UnsplashSettings.callbackURLScheme
-    
-    let authSessionHandler: ((URL?, Error?) -> Void) = { [weak self] callbackURL, error in
-      guard error == nil, let callbackURL = callbackURL else {
-        switch error {
-        case ASWebAuthenticationSessionError.canceledLogin?: break
-        default: fatalError()
-        }
-        return
+  fileprivate func authenticate() {
+    authenticationRepoType?.authenticate()
+    authenticationRepoType?.receivedAccessTokenHandler = { [weak self] error in
+      if let error = error {
+        print("error getting access token: ", error)
       }
-      self?.authManager.receivedCodeRedirect(url: callbackURL)
+      CustomHUD.showSuccess(title: "Success",
+                            details: "You are now logged in",
+                            delay: 1.5) { _ in
+        self?.dismiss(animated: true)
+      }
     }
-  
-    authSession = ASWebAuthenticationSession(url: authURL,
-                                                  callbackURLScheme: callbackURLScheme,
-                                                  completionHandler: authSessionHandler)
-    authSession?.start()
   }
 }
 
@@ -179,18 +161,5 @@ extension LoginViewController {
   @IBAction func dismissButtonTapped(_ sender: UIButton) {
 //    SceneCoordinator.shared.pop(animated: true)
     dismiss(animated: true)
-  }
-}
-
-extension LoginViewController: UnsplashSessionListener {
-  func didReceiveRedirect(code: String) {
-    print("received code")
-    self.authManager.accessToken(with: code) { [weak self] _, error in
-      if let error = error {
-        print("error, couldn't login: ", error)
-      } else {
-        self?.dismiss(animated: true)
-      }
-    }
   }
 }

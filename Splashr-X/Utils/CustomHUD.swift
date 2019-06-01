@@ -11,12 +11,20 @@ import PKHUD
 
 struct CustomHUD {
   
-  static func showSuccess(title: String? = nil, details: String? = nil) {
-    HUD.flash(.labeledSuccess(title: title, subtitle: details), delay: 3)
+  static func showSuccess(title: String? = nil, details: String? = nil, delay: TimeInterval = 3, completionHandler: ((Bool) -> Void)? = nil) {
+    DispatchQueue.main.async {
+      HUD.flash(.labeledSuccess(title: title, subtitle: details),
+                delay: delay,
+                completion: completionHandler)
+    }
   }
   
-  static func showError(title: String? = nil, details: String? = nil) {
-    HUD.flash(.labeledError(title: title, subtitle: details), delay: 3)
+  static func showError(title: String? = nil, details: String? = nil, delay: TimeInterval = 3, completionHandler: ((Bool) -> Void)? = nil) {
+    DispatchQueue.main.async {
+      HUD.flash(.labeledError(title: title, subtitle: details),
+                delay: delay,
+                completion: completionHandler)
+    }
   }
 
 }

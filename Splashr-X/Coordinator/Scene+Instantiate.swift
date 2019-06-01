@@ -42,8 +42,9 @@ extension PhotoDetailsViewController {
 }
 
 extension LoginViewController {
-  static func instantiate(dismissAnimatable: DismissAnimatable) -> LoginViewController {
+  static func instantiate(dismissAnimatable: DismissAnimatable, authenticationRepoType: AuthenticationRepoType) -> LoginViewController {
     let loginVC = LoginViewController()
+    loginVC.authenticationRepoType = authenticationRepoType
     loginVC.dismissAnimatable = dismissAnimatable
     return loginVC
   }

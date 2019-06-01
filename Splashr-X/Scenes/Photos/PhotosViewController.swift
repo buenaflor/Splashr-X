@@ -10,6 +10,8 @@ import UIKit
 
 class PhotosViewController: UIViewController {
   
+  var authenticationRepoType: AuthenticationRepoType?
+  
   var photosRepoType: PhotosRepoType? {
     didSet {
       configureIsWaitingForConnectivity()
