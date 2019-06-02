@@ -24,5 +24,4 @@ struct UserSession {
     return accessToken != nil
   }
   
-  
 }

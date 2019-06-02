@@ -102,6 +102,8 @@ class LoginViewController: UIViewController {
   
   // MARK: - Pan Gesture
   
+  var isBeingDismissedManually = false
+
   weak var interactor: DismissInteractor?
   @objc fileprivate func dismissPanGestureHandler(_ sender: UIPanGestureRecognizer) {
     let percentThreshold: CGFloat = 0.3
@@ -118,6 +120,7 @@ class LoginViewController: UIViewController {
     switch sender.state {
     case .began:
       interactor.hasStarted = true
+      isBeingDismissedManually = false
       dismiss(animated: true)
     case .changed:
       interactor.shouldFinish = progress > percentThreshold
@@ -160,6 +163,7 @@ extension LoginViewController {
   
   @IBAction func dismissButtonTapped(_ sender: UIButton) {
 //    SceneCoordinator.shared.pop(animated: true)
+    isBeingDismissedManually = true
     dismiss(animated: true)
   }
 }

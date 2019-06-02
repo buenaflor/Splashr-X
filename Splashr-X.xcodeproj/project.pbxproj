@@ -41,6 +41,8 @@
 		340909BB22A30A3C007A1062 /* AuthenticationRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340909BA22A30A3C007A1062 /* AuthenticationRepo.swift */; };
 		340909BD22A30C77007A1062 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340909BC22A30C77007A1062 /* AuthenticationManager.swift */; };
 		340909C022A310DE007A1062 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340909BF22A310DE007A1062 /* UserSession.swift */; };
+		340909C222A352F8007A1062 /* AuthenticationRepoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340909C122A352F8007A1062 /* AuthenticationRepoType.swift */; };
+		340909C422A35CBF007A1062 /* AnimationDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340909C322A35CBF007A1062 /* AnimationDuration.swift */; };
 		342EF5F4229F0F8500B3E6EC /* CollectionsViewCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342EF5F3229F0F8500B3E6EC /* CollectionsViewCellConfigurator.swift */; };
 		342EF5F6229F1C7000B3E6EC /* PhotosRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342EF5F5229F1C7000B3E6EC /* PhotosRepo.swift */; };
 		342EF5F9229F1CFB00B3E6EC /* CollectionsRepoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342EF5F8229F1CFB00B3E6EC /* CollectionsRepoType.swift */; };
@@ -166,6 +168,8 @@
 		340909BA22A30A3C007A1062 /* AuthenticationRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepo.swift; sourceTree = "<group>"; };
 		340909BC22A30C77007A1062 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		340909BF22A310DE007A1062 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
+		340909C122A352F8007A1062 /* AuthenticationRepoType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepoType.swift; sourceTree = "<group>"; };
+		340909C322A35CBF007A1062 /* AnimationDuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationDuration.swift; sourceTree = "<group>"; };
 		342EF5F3229F0F8500B3E6EC /* CollectionsViewCellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionsViewCellConfigurator.swift; sourceTree = "<group>"; };
 		342EF5F5229F1C7000B3E6EC /* PhotosRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosRepo.swift; sourceTree = "<group>"; };
 		342EF5F8229F1CFB00B3E6EC /* CollectionsRepoType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsRepoType.swift; sourceTree = "<group>"; };
@@ -362,6 +366,7 @@
 			children = (
 				340909A922A2EBE6007A1062 /* DismissAnimator.swift */,
 				340909AB22A2EC1D007A1062 /* DismissInteractor.swift */,
+				340909C322A35CBF007A1062 /* AnimationDuration.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -400,6 +405,7 @@
 		340909B922A30A2F007A1062 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				340909C122A352F8007A1062 /* AuthenticationRepoType.swift */,
 				340909BA22A30A3C007A1062 /* AuthenticationRepo.swift */,
 				340909BC22A30C77007A1062 /* AuthenticationManager.swift */,
 			);
@@ -1023,6 +1029,7 @@
 				3409097622A089BE007A1062 /* PhotoDetailsPushTransition.swift in Sources */,
 				34816CB5229C79E400000724 /* Unsplash.swift in Sources */,
 				342EF5F4229F0F8500B3E6EC /* CollectionsViewCellConfigurator.swift in Sources */,
+				340909C422A35CBF007A1062 /* AnimationDuration.swift in Sources */,
 				3454DF39229AF56200EA3592 /* SceneCoordinatorType.swift in Sources */,
 				3454DF33229AF41F00EA3592 /* URLSessionManager.swift in Sources */,
 				34816CC7229C7D1E00000724 /* Category.swift in Sources */,
@@ -1041,6 +1048,7 @@
 				34816CC5229C7D1E00000724 /* Photo.swift in Sources */,
 				3454DF28229AF41F00EA3592 /* URLSession+Extensions.swift in Sources */,
 				3409098722A09814007A1062 /* PhotoDetailsPopTransition.swift in Sources */,
+				340909C222A352F8007A1062 /* AuthenticationRepoType.swift in Sources */,
 				34816CDC229D9E8000000724 /* CollectionsViewDataSourceProvider.swift in Sources */,
 				340909C022A310DE007A1062 /* UserSession.swift in Sources */,
 				340909A122A15A81007A1062 /* LoginImagePreviewCollectionViewCell.swift in Sources */,

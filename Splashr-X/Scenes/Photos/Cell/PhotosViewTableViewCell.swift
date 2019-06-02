@@ -57,6 +57,10 @@ class PhotosViewTableViewCell: UITableViewCell {
     selectionStyle = .none
   }
   
+  override func prepareForReuse() {
+    super.prepareForReuse()
+  }
+  
   // MARK: - Action Handlers
   
   var likeButtonTappedHandler: ((UIButton) -> Void)?

@@ -8,6 +8,11 @@
 
 import Foundation
 
+enum NonPublicScopeError: Error {
+  case noAccessToken
+  case error(withMessage: String)
+}
+
 enum Unsplash {
   
   /// Get a list of all collections
@@ -21,6 +26,11 @@ enum Unsplash {
     perPage: Int?,
     orderBy: OrderBy?)
   
+  /// Like a photo as a logged-in user
+  case likePhoto(id: String)
+  
+  /// Remove a user’s like of a photo.
+  case unlikePhoto(id: String)
 }
 
 extension Unsplash: ResourceType {
@@ -39,6 +49,10 @@ extension Unsplash: ResourceType {
       return .get(path: "/collections")
     case .photos:
       return .get(path: "/photos")
+    case .likePhoto(let id):
+      return .post(path: "/photos/\(id)/like")
+    case let .unlikePhoto(id):
+      return .delete(path: "/photos/\(id)/like")
     }
   }
   
@@ -60,13 +74,17 @@ extension Unsplash: ResourceType {
       params["order_by"] = orderBy
       
       return .requestWithParameters(params, encoding: URLEncoding())
+    default:
+      return .requestWithParameters([:], encoding: URLEncoding())
     }
   }
   
   var headers: [String : String] {
-    return [
-      "Authorization": "Client-ID \(Configuration.UnsplashSettings.clientID)"
-    ]
+    let clientID = Configuration.UnsplashSettings.clientID
+    guard let accessToken = UserSession.accessToken else {
+      return ["Authorization": "Client-ID \(clientID)"]
+    }
+    return ["Authorization": "Bearer \(accessToken)"]
   }
 }
 

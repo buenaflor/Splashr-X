@@ -9,6 +9,7 @@
 import Foundation
 
 protocol PhotoTableViewItem {
+  var id: String? { get }
   var created: String? { get }
   var updated: String? { get }
   var description: String? { get }

@@ -13,5 +13,9 @@ typealias Photos = [Photo]
 protocol PhotosRepoType {
   func photos(byPageNumber pageNumber: Int, orderBy: OrderBy, curated: Bool, completion: @escaping  ((Result<Photos, Error>) -> Void))
   
+  func likePhoto(id: String, completion: @escaping (NonPublicScopeError?) -> Void)
+  
+  func unlikePhoto(id: String, completion: @escaping (NonPublicScopeError?) -> Void)
+  
   var isWaitingForConnectivityHandler: ((URLSession, URLSessionTask) -> Void)? { get set }
 }

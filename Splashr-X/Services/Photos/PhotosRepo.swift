@@ -45,4 +45,42 @@ class PhotosRepo: PhotosRepoType {
     }
   }
   
+  func likePhoto(id: String, completion: @escaping (NonPublicScopeError?) -> Void) {
+    // We are checking the accessToken before too but we check again just to be sure
+    guard UserSession.accessToken != nil else {
+      completion(.noAccessToken)
+      return
+    }
+    unsplash.request(.likePhoto(id: id)) { (response) in
+      switch response {
+      case .success:
+        completion(nil)
+        
+      // Networking error
+      case let .error(error):
+        completion(.error(withMessage: error.localizedDescription))
+      }
+
+    }
+  }
+  
+  func unlikePhoto(id: String, completion: @escaping (NonPublicScopeError?) -> Void) {
+    // We are checking the accessToken before too but we check again just to be sure
+    guard UserSession.accessToken != nil else {
+      completion(.noAccessToken)
+      return
+    }
+    unsplash.request(.unlikePhoto(id: id)) { (response) in
+      switch response {
+      case .success:
+        completion(nil)
+        
+      // Networking error
+      case let .error(error):
+        completion(.error(withMessage: error.localizedDescription))
+      }
+      
+    }
+  }
+  
 }

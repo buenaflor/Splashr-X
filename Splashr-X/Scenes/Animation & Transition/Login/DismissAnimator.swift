@@ -25,6 +25,10 @@ extension DismissAnimator : UIViewControllerAnimatedTransitioning {
         return
     }
     
+    guard let transitionDurationVC = fromVC as? TransitionAnimationDurationCompatible else {
+      return
+    }
+    
     transitionContext.containerView.insertSubview(toVC.view, belowSubview: fromVC.view)
     
     let screenBounds = UIScreen.main.bounds
@@ -32,7 +36,7 @@ extension DismissAnimator : UIViewControllerAnimatedTransitioning {
     let finalFrame = CGRect(origin: bottomLeftCorner, size: screenBounds.size)
     
     UIView.animate(
-      withDuration: transitionDuration(using: transitionContext),
+      withDuration: transitionDurationVC.isBeingDismissedManually ? 0.35 : 0.6,
       animations: {
         fromVC.view.frame = finalFrame
     },

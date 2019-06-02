@@ -9,11 +9,6 @@
 import Foundation
 import AuthenticationServices
 
-protocol AuthenticationRepoType {
-  var receivedAccessTokenHandler: ((Error?) -> Void)? { get set }
-  func authenticate()
-}
-
 class AuthenticationRepo: AuthenticationRepoType {
   
   var receivedAccessTokenHandler: ((Error?) -> Void)?

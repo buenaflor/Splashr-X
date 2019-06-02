@@ -23,17 +23,32 @@ extension PhotosViewController {
   
   /// Likes a user photo but checks if user is logged in first
   func likePhoto(_ button: UIButton, _ photo: PhotoTableViewItem) {
-
-    guard UserSession.isLoggedIn else {
-      // For now we don't use our coordinator due to retain cycle problems
-      let authenticationRepoType = AuthenticationRepo()
-      let loginVC = LoginViewController.instantiate(dismissAnimatable: self, authenticationRepoType: authenticationRepoType)
-      present(loginVC, animated: true)
-      return
-    }
     
     // User is logged in, now we can like
-    print("logged in")
+    guard let id = photo.id else {
+      print("Error: cannot like, no id available")
+      return
+    }
+    photosRepoType?.likePhoto(id: id, completion: { [weak self] (error) in
+      if let error = error {
+        switch error {
+        case .noAccessToken:
+          guard let strongSelf = self else {
+            return
+          }
+          let authenticationRepoType = AuthenticationRepo()
+          let loginVC = LoginViewController.instantiate(dismissAnimatable: strongSelf, authenticationRepoType: authenticationRepoType)
+          strongSelf.present(loginVC, animated: true)
+        default:
+          print("Error, couldn't like: ", error)
+        }
+      } else {
+        DispatchQueue.main.async {
+          button.setImage(#imageLiteral(resourceName: "heart_filled").withRenderingMode(.alwaysTemplate), for: .normal)
+          button.tintColor = .red
+        }
+      }
+    })
   }
   
   /// Sends/Share the photo based on the actions
