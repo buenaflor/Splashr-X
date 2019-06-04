@@ -24,6 +24,38 @@ class CollectionsRepo: CollectionsRepoType {
   func collections(byPageNumber page: Int, curated: Bool, completion: @escaping ((Result<PhotoCollections, Error>) -> Void)) {
     let photosPerPage = 20
     
+    requestCollections(byPageNumber: page, photosPerPage: photosPerPage, completion: completion)
+  }
+  
+  func collections(withUsername username: String, completion: @escaping ((Result<PhotoCollections, Error>) -> Void)) {
+    let photosPerPage = 20
+
+    requestCollections(withUsername: username, page: 1, photosPerPage: photosPerPage, completion: completion)
+  }
+}
+
+fileprivate extension CollectionsRepo {
+  
+  func requestCollections(withUsername username: String, page: Int, photosPerPage: Int, completion: @escaping ((Result<PhotoCollections, Error>) -> Void)) {
+    unsplash.request(.userCollections(username: username, page: page, perPage: photosPerPage)) { (response) in
+      switch response {
+      case let .success(value):
+        do {
+          let photoCollections = try value.map(to: PhotoCollections.self)
+          completion(Result.success(photoCollections))
+        }
+        catch {
+          // Decoding error
+          completion(Result.failure(error))
+        }
+      // Networking error
+      case let .error(error):
+        completion(Result.failure(error))
+      }
+    }
+  }
+  
+  func requestCollections(byPageNumber page: Int, photosPerPage: Int, completion: @escaping ((Result<PhotoCollections, Error>) -> Void)) {
     unsplash.request(.collections(page: page, photosPerPage: photosPerPage)) { (response) in
       switch response {
       case let .success(value):
@@ -35,8 +67,8 @@ class CollectionsRepo: CollectionsRepoType {
           // Decoding error
           completion(Result.failure(error))
         }
-        // Networking error
-        case let .error(error):
+      // Networking error
+      case let .error(error):
         completion(Result.failure(error))
       }
     }

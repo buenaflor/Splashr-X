@@ -26,6 +26,12 @@ enum Unsplash {
     perPage: Int?,
     orderBy: OrderBy?)
   
+  /// List a user’s collections
+  case userCollections(
+    username:String,
+    page: Int?,
+    perPage: Int?)
+  
   /// Like a photo as a logged-in user
   case likePhoto(id: String)
   
@@ -47,6 +53,8 @@ extension Unsplash: ResourceType {
     switch self {
     case .collections:
       return .get(path: "/collections")
+    case let .userCollections(param):
+      return .get(path: "/users/\(param.username)/collections")
     case .photos:
       return .get(path: "/photos")
     case .likePhoto(let id):
@@ -58,7 +66,8 @@ extension Unsplash: ResourceType {
   
   var task: Task {
     switch self {
-    case let .collections(pageNumber, photosPerPage):
+    case let .collections(pageNumber, photosPerPage),
+         let .userCollections(_, page: pageNumber, perPage: photosPerPage):
       
       var params: [String: Any] = [:]
       params["page"] = pageNumber
