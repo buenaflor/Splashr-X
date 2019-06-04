@@ -143,11 +143,12 @@ class LoginViewController: UIViewController {
     authenticationRepoType?.receivedAccessTokenHandler = { [weak self] error in
       if let error = error {
         print("error getting access token: ", error)
-      }
-      CustomHUD.showSuccess(title: "Success",
-                            details: "You are now logged in",
-                            delay: 1.5) { _ in
-        self?.dismiss(animated: true)
+      } else {
+        CustomHUD.showSuccess(title: "Success",
+                              details: "You are now logged in",
+                              delay: 1.5) { _ in
+                                self?.dismiss(animated: true)
+        }
       }
     }
   }

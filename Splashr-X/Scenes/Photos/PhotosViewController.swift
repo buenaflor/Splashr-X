@@ -136,8 +136,20 @@ fileprivate extension PhotosViewController {
           // Load it the first time
           if self?.photosViewDataSourceProvider == nil {
             self?.configureDataSourceProvider()
+            self?.tableView.reloadData()
+            return
           }
+          
+          var indexPaths: [IndexPath] = []
+          let photosCount = self?.photos.count ?? 0
+          let fetchedPhotosCount = photos.count
+          for index in photosCount - fetchedPhotosCount..<photosCount {
+            indexPaths.append(IndexPath(row: index, section: 0))
+          }
+          let contentOffset = self?.tableView.contentOffset
           self?.tableView.reloadData()
+          self?.tableView.contentOffset = contentOffset ?? CGPoint(x: 0, y: 0)
+          self?.tableView.layoutIfNeeded()
         }
       case let .failure(error):
         self?.isFetchInProgress = false

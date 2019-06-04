@@ -81,7 +81,7 @@ class PhotosViewDataSourceProvider<Model: PhotoTableViewItem>: NSObject, TableVi
     
     let model = models[indexPath.row]
     guard let width = model.width,
-      let height = model.height else {
+          let height = model.height else {
         return 500
     }
     let ratio = CGFloat(width) / CGFloat(height)
