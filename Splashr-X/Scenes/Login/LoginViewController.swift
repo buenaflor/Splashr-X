@@ -13,10 +13,11 @@ class LoginViewController: UIViewController {
   
   var authenticationRepoType: AuthenticationRepoType?
   
-  var dismissAnimatable: DismissAnimatable? {
+  var isBeingDismissedManually = false
+  
+  var presentDismissTransitionableDependencies: PresentDismissTransitionableDependencies? {
     didSet {
-      transitioningDelegate = dismissAnimatable?.delegate
-      interactor = dismissAnimatable?.interactor
+      transitioningDelegate = presentDismissTransitionableDependencies?.delegate
     }
   }
   
@@ -68,7 +69,7 @@ class LoginViewController: UIViewController {
   // MARK: - Configuration
   
   fileprivate func configureViewController() {
-    let panGesture = UIPanGestureRecognizer(target: self, action: #selector(dismissPanGestureHandler(_:)))
+    let panGesture = UIPanGestureRecognizer(target: self, action: #selector(dismissPanGesture(_:)))
     view.addGestureRecognizer(panGesture)
   }
   
@@ -100,40 +101,15 @@ class LoginViewController: UIViewController {
     currentIndex += 1
   }
   
-  // MARK: - Pan Gesture
+  // MARK: - Animator
   
-  var isBeingDismissedManually = false
-
-  weak var interactor: DismissInteractor?
-  @objc fileprivate func dismissPanGestureHandler(_ sender: UIPanGestureRecognizer) {
-    let percentThreshold: CGFloat = 0.3
-    
-    // convert y-position to downward pull progress (percentage)
-    let translation = sender.translation(in: view)
-    let verticalMovement = translation.y / view.bounds.height
-    let downwardMovement = fmaxf(Float(verticalMovement), 0.0)
-    let downwardMovementPercent = fminf(downwardMovement, 1.0)
-    let progress = CGFloat(downwardMovementPercent)
-    
-    guard let interactor = interactor else { return }
-    
-    switch sender.state {
-    case .began:
-      interactor.hasStarted = true
-      isBeingDismissedManually = false
-      dismiss(animated: true)
-    case .changed:
-      interactor.shouldFinish = progress > percentThreshold
-      interactor.update(progress)
-    case .cancelled:
-      interactor.hasStarted = false
-      interactor.cancel()
-    case .ended:
-      interactor.hasStarted = false
-      interactor.shouldFinish ? interactor.finish() : interactor.cancel()
-    default:
-      break
-    }
+  lazy var presentableAnimator: PresentableAnimatorType = {
+    let animator = PresentableAnimator(target: self, dependencies: presentDismissTransitionableDependencies)
+    return animator
+  }()
+  
+  @objc func dismissPanGesture(_ sender: UIPanGestureRecognizer) {
+    presentableAnimator.updatePresentedView(panGestureRecognizer: sender)
   }
   
   // MARK: Authentication
@@ -168,3 +144,4 @@ extension LoginViewController {
     dismiss(animated: true)
   }
 }
+

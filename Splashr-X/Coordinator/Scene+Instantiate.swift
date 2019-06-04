@@ -42,10 +42,19 @@ extension PhotoDetailsViewController {
 }
 
 extension LoginViewController {
-  static func instantiate(dismissAnimatable: DismissAnimatable, authenticationRepoType: AuthenticationRepoType) -> LoginViewController {
+  static func instantiate(presentableDismissDependencies: PresentDismissTransitionableDependencies, authenticationRepoType: AuthenticationRepoType) -> LoginViewController {
     let loginVC = LoginViewController()
     loginVC.authenticationRepoType = authenticationRepoType
-    loginVC.dismissAnimatable = dismissAnimatable
+    loginVC.presentDismissTransitionableDependencies = presentableDismissDependencies
     return loginVC
   }
 }
+
+extension AddToCollectionsViewController {
+  static func instantiate(presentDismissTransitionableDependencies: PresentDismissTransitionableDependencies) -> AddToCollectionsViewController {
+    let addToCollectionsVC = AddToCollectionsViewController.initFromNib()
+    addToCollectionsVC.presentDismissTransitionableDependencies = presentDismissTransitionableDependencies
+    return addToCollectionsVC
+  }
+}
+

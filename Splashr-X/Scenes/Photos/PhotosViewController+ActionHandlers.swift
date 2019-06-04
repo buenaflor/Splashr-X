@@ -8,17 +8,6 @@
 
 import UIKit
 
-protocol DismissAnimatable {
-  var delegate: UIViewControllerTransitioningDelegate? { get }
-  var interactor: DismissInteractor { get }
-}
-
-extension PhotosViewController: DismissAnimatable {
-  weak var delegate: UIViewControllerTransitioningDelegate? {
-    return self
-  }
-}
-
 extension PhotosViewController {
   
   /// Likes a user photo but checks if user is logged in first
@@ -37,7 +26,7 @@ extension PhotosViewController {
             return
           }
           let authenticationRepoType = AuthenticationRepo()
-          let loginVC = LoginViewController.instantiate(dismissAnimatable: strongSelf, authenticationRepoType: authenticationRepoType)
+          let loginVC = LoginViewController.instantiate(presentableDismissDependencies: strongSelf, authenticationRepoType: authenticationRepoType)
           strongSelf.present(loginVC, animated: true)
         default:
           print("Error, couldn't like: ", error)
@@ -77,7 +66,8 @@ extension PhotosViewController {
   
   /// Bookmarks the photo but checks if user is logged in first
   func bookmarkPhoto(_ button: UIButton, _ photo: PhotoTableViewItem) {
-    
+    let addToCollectionsVC = AddToCollectionsViewController.instantiate(presentDismissTransitionableDependencies: self)
+    self.present(addToCollectionsVC, animated: true)
   }
   
   /// Shows the photo details with an animation

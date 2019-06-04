@@ -11,7 +11,3 @@ import Foundation
 protocol TransitionAnimationDurationCompatible {
   var isBeingDismissedManually: Bool { get set }
 }
-
-extension LoginViewController: TransitionAnimationDurationCompatible {
-  
-}

@@ -58,6 +58,12 @@
 		342EF613229F32AB00B3E6EC /* UIColor+HexValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342EF612229F32AB00B3E6EC /* UIColor+HexValues.swift */; };
 		342EF616229F351A00B3E6EC /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342EF615229F351A00B3E6EC /* Configuration.swift */; };
 		342EF61922A0747B00B3E6EC /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342EF61822A0747B00B3E6EC /* TabBarController.swift */; };
+		34432F7622A719E100B615EF /* AddToCollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34432F7522A719E100B615EF /* AddToCollectionsViewController.swift */; };
+		34432F7822A71A2500B615EF /* AddToCollectionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34432F7722A71A2500B615EF /* AddToCollectionsViewController.xib */; };
+		34432F7A22A71D0B00B615EF /* PresentDismissTransitionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34432F7922A71D0B00B615EF /* PresentDismissTransitionable.swift */; };
+		34432F7C22A721F900B615EF /* PresentableAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34432F7B22A721F900B615EF /* PresentableAnimator.swift */; };
+		34432F7E22A7286700B615EF /* PresentDismissTransitionableDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34432F7D22A7286700B615EF /* PresentDismissTransitionableDependencies.swift */; };
+		34432F8022A729B300B615EF /* PresentableAnimatorTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34432F7F22A729B300B615EF /* PresentableAnimatorTarget.swift */; };
 		3454DEEC229AF2D600EA3592 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3454DEEB229AF2D600EA3592 /* AppDelegate.swift */; };
 		3454DEEE229AF2D600EA3592 /* CollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3454DEED229AF2D600EA3592 /* CollectionsViewController.swift */; };
 		3454DEF3229AF2D700EA3592 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3454DEF2229AF2D700EA3592 /* Assets.xcassets */; };
@@ -185,6 +191,12 @@
 		342EF612229F32AB00B3E6EC /* UIColor+HexValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HexValues.swift"; sourceTree = "<group>"; };
 		342EF615229F351A00B3E6EC /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		342EF61822A0747B00B3E6EC /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		34432F7522A719E100B615EF /* AddToCollectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCollectionsViewController.swift; sourceTree = "<group>"; };
+		34432F7722A71A2500B615EF /* AddToCollectionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddToCollectionsViewController.xib; sourceTree = "<group>"; };
+		34432F7922A71D0B00B615EF /* PresentDismissTransitionable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentDismissTransitionable.swift; sourceTree = "<group>"; };
+		34432F7B22A721F900B615EF /* PresentableAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableAnimator.swift; sourceTree = "<group>"; };
+		34432F7D22A7286700B615EF /* PresentDismissTransitionableDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentDismissTransitionableDependencies.swift; sourceTree = "<group>"; };
+		34432F7F22A729B300B615EF /* PresentableAnimatorTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableAnimatorTarget.swift; sourceTree = "<group>"; };
 		3454DEE8229AF2D600EA3592 /* Splashr-X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Splashr-X.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3454DEEB229AF2D600EA3592 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3454DEED229AF2D600EA3592 /* CollectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsViewController.swift; sourceTree = "<group>"; };
@@ -299,7 +311,7 @@
 		3409097422A089B2007A1062 /* Animation & Transition */ = {
 			isa = PBXGroup;
 			children = (
-				340909A822A2EBC7007A1062 /* Login */,
+				340909A822A2EBC7007A1062 /* Dismiss */,
 				3409098822A0A87E007A1062 /* PhotoDetails */,
 			);
 			path = "Animation & Transition";
@@ -361,14 +373,18 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		340909A822A2EBC7007A1062 /* Login */ = {
+		340909A822A2EBC7007A1062 /* Dismiss */ = {
 			isa = PBXGroup;
 			children = (
 				340909A922A2EBE6007A1062 /* DismissAnimator.swift */,
 				340909AB22A2EC1D007A1062 /* DismissInteractor.swift */,
 				340909C322A35CBF007A1062 /* AnimationDuration.swift */,
+				34432F7922A71D0B00B615EF /* PresentDismissTransitionable.swift */,
+				34432F7B22A721F900B615EF /* PresentableAnimator.swift */,
+				34432F7D22A7286700B615EF /* PresentDismissTransitionableDependencies.swift */,
+				34432F7F22A729B300B615EF /* PresentableAnimatorTarget.swift */,
 			);
-			path = Login;
+			path = Dismiss;
 			sourceTree = "<group>";
 		};
 		340909AD22A2FE66007A1062 /* User */ = {
@@ -502,6 +518,15 @@
 			path = "Tab Bar";
 			sourceTree = "<group>";
 		};
+		34432F7422A719C800B615EF /* Add to Collection */ = {
+			isa = PBXGroup;
+			children = (
+				34432F7522A719E100B615EF /* AddToCollectionsViewController.swift */,
+				34432F7722A71A2500B615EF /* AddToCollectionsViewController.xib */,
+			);
+			path = "Add to Collection";
+			sourceTree = "<group>";
+		};
 		3454DEDF229AF2D600EA3592 = {
 			isa = PBXGroup;
 			children = (
@@ -578,6 +603,7 @@
 				3409099322A15497007A1062 /* Login */,
 				3409096F22A082A1007A1062 /* Photo Details */,
 				34816CB6229C7A0D00000724 /* Collections */,
+				34432F7422A719C800B615EF /* Add to Collection */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -889,6 +915,7 @@
 				3454DEF6229AF2D700EA3592 /* LaunchScreen.storyboard in Resources */,
 				3454DEF3229AF2D700EA3592 /* Assets.xcassets in Resources */,
 				342EF601229F1F2500B3E6EC /* PhotosViewController.xib in Resources */,
+				34432F7822A71A2500B615EF /* AddToCollectionsViewController.xib in Resources */,
 				34816CAE229C794300000724 /* CollectionsViewController.xib in Resources */,
 				3409098522A09470007A1062 /* PhotoDetailsViewController.xib in Resources */,
 			);
@@ -1014,6 +1041,7 @@
 				34816CE5229DA9B900000724 /* Reloadable.swift in Sources */,
 				34816CC2229C7D1E00000724 /* Links.swift in Sources */,
 				3454DF4C229AF5D900EA3592 /* IdentifiableType.swift in Sources */,
+				34432F7E22A7286700B615EF /* PresentDismissTransitionableDependencies.swift in Sources */,
 				34816CCF229C82F300000724 /* UITableView+GenericDequeue.swift in Sources */,
 				342EF605229F1F6F00B3E6EC /* PhotosViewDataSourceProvider.swift in Sources */,
 				34816CDF229DA1CC00000724 /* TableViewDataSourceProvider.swift in Sources */,
@@ -1029,6 +1057,7 @@
 				3409097622A089BE007A1062 /* PhotoDetailsPushTransition.swift in Sources */,
 				34816CB5229C79E400000724 /* Unsplash.swift in Sources */,
 				342EF5F4229F0F8500B3E6EC /* CollectionsViewCellConfigurator.swift in Sources */,
+				34432F7A22A71D0B00B615EF /* PresentDismissTransitionable.swift in Sources */,
 				340909C422A35CBF007A1062 /* AnimationDuration.swift in Sources */,
 				3454DF39229AF56200EA3592 /* SceneCoordinatorType.swift in Sources */,
 				3454DF33229AF41F00EA3592 /* URLSessionManager.swift in Sources */,
@@ -1057,6 +1086,8 @@
 				3409099222A14CE4007A1062 /* AlertPresenter.swift in Sources */,
 				342EF5F6229F1C7000B3E6EC /* PhotosRepo.swift in Sources */,
 				340909B622A30088007A1062 /* UnsplashAuthError.swift in Sources */,
+				34432F7C22A721F900B615EF /* PresentableAnimator.swift in Sources */,
+				34432F7622A719E100B615EF /* AddToCollectionsViewController.swift in Sources */,
 				3454DF2D229AF41F00EA3592 /* URL+Extensions.swift in Sources */,
 				342EF608229F1FA300B3E6EC /* Photo+TableViewItem.swift in Sources */,
 				3409096922A077D4007A1062 /* CoreDependencies.swift in Sources */,
@@ -1085,6 +1116,7 @@
 				342EF5F9229F1CFB00B3E6EC /* CollectionsRepoType.swift in Sources */,
 				3454DF31229AF41F00EA3592 /* Endpoint.swift in Sources */,
 				3454DF2B229AF41F00EA3592 /* ResourceType.swift in Sources */,
+				34432F8022A729B300B615EF /* PresentableAnimatorTarget.swift in Sources */,
 				342EF60C229F232500B3E6EC /* UITableView+isLoadingCell.swift in Sources */,
 				3409099522A154C3007A1062 /* LoginViewController.swift in Sources */,
 				3454DF4B229AF5D900EA3592 /* ClassIdentifiable.swift in Sources */,
