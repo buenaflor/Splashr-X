@@ -21,8 +21,11 @@ class PhotosViewCellConfigurator<Model: PhotoTableViewItem>: CellConfigurator {
     let cell = tableView.dequeue(PhotosViewTableViewCell.self, for: indexPath)
     
     if let user = model.user {
+      cell.activityIndicator.startAnimating()
       if let url = URL(string: user.profileImage?.medium ?? "") {
-        Nuke.loadImage(with: url, into: cell.userImageView)
+        Nuke.loadImage(with: url, into: cell.userImageView) { (_, _) in
+          cell.activityIndicator.stopAnimating()
+        }
       }
       if let username = user.fullName {
         cell.usernameLabel.text = username

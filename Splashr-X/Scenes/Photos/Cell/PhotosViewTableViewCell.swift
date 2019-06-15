@@ -19,6 +19,8 @@ class PhotosViewTableViewCell: UITableViewCell {
     }
   }
   
+  @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+  
   @IBOutlet weak var userImageView: UIImageView! {
     didSet {
       userImageView

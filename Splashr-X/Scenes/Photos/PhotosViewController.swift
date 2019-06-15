@@ -10,19 +10,25 @@ import UIKit
 
 class PhotosViewController: UIViewController {
   
+  // MARK: - Repositories/Services
+  
   var authenticationRepoType: AuthenticationRepoType?
   
   var photosRepoType: PhotosRepoType? {
     didSet {
-      configureIsWaitingForConnectivity()
+//      configureIsWaitingForConnectivity()
     }
   }
+  
+  // MARK: - Model
   
   fileprivate var photos: Photos = [] {
     didSet {
       photosViewDataSourceProvider?.reloadAll(photos)
     }
   }
+  
+  // MARK: - DataSourceProvider
   
   /// Data Source provider -> DataSource, Delegate & PrefetchDataSource
   fileprivate var photosViewDataSourceProvider: PhotosViewDataSourceProvider<Photo>? {
@@ -102,9 +108,9 @@ class PhotosViewController: UIViewController {
   
   /// Called if the urlSession is waiting for connectivity
   fileprivate func configureIsWaitingForConnectivity() {
-    //    photoRepoType?.isWaitingForConnectivityHandler = { [weak self] (session, task) in
-    //      print("waitin for connectivity in photos vc")
-    //    }
+    photosRepoType?.isWaitingForConnectivityHandler = { [weak self] (session, task) in
+      print("waitin for connectivity in photos vc")
+    }
   }
   
   let interactor = DismissInteractor()
@@ -140,6 +146,7 @@ fileprivate extension PhotosViewController {
             return
           }
           
+          // Reload without TableView changing offset
           var indexPaths: [IndexPath] = []
           let photosCount = self?.photos.count ?? 0
           let fetchedPhotosCount = photos.count
