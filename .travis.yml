@@ -1,6 +1,6 @@
 language: objective-c
 osx_image: xcode10.2
-xcode_workspace: Splashr-X.xcodeproj
+xcode_workspace: Splashr-X.xcworkspace
 xcode_scheme: Splashr-X
 xcode_destination: platform=iOS Simulator,OS=12.1,name=iPhone X
 before_install:
