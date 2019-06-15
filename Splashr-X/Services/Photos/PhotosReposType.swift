@@ -17,5 +17,5 @@ protocol PhotosRepoType {
   
   func unlikePhoto(id: String, completion: @escaping (NonPublicScopeError?) -> Void)
   
-  var isWaitingForConnectivityHandler: ((URLSession, URLSessionTask) -> Void)? { get set }
+  func taskIsWaitingForConnectivity(_ handler: @escaping ((URLSession, URLSessionTask) -> Void))
 }

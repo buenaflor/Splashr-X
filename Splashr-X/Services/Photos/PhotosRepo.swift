@@ -8,19 +8,18 @@
 
 import Foundation
 
-class PhotosRepo: PhotosRepoType {
-  
+struct PhotosRepo: PhotosRepoType {
   var isWaitingForConnectivityHandler: ((URLSession, URLSessionTask) -> Void)?
   
   private let unsplash: HTTPNetworking<Unsplash>
   
-  init(unsplash: HTTPNetworking<Unsplash> = HTTPNetworking<Unsplash>()) {
+  init(unsplash: HTTPNetworking<Unsplash> = .init()) {
     self.unsplash = unsplash
-    self.unsplash.isWaitingForConnectivityHandler = { [weak self] (urlSession, task) in
-      guard let strongSelf = self else {
-        return
-      }
-      strongSelf.isWaitingForConnectivityHandler?(urlSession, task)
+  }
+  
+  func taskIsWaitingForConnectivity(_ handler: @escaping ((URLSession, URLSessionTask) -> Void)) {
+    self.unsplash.isWaitingForConnectivityHandler = { session, urlSessionTask in
+      handler(session, urlSessionTask)
     }
   }
   

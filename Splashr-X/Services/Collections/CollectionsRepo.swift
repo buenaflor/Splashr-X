@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CollectionsRepo: CollectionsRepoType {
+struct CollectionsRepo: CollectionsRepoType {
   
   var isWaitingForConnectivityHandler: ((URLSession, URLSessionTask) -> Void)?
   
@@ -16,9 +16,7 @@ class CollectionsRepo: CollectionsRepoType {
   
   init(unsplash: HTTPNetworking<Unsplash> = HTTPNetworking<Unsplash>()) {
     self.unsplash = unsplash
-    self.unsplash.isWaitingForConnectivityHandler = { [weak self] (urlSession, task) in
-      self?.isWaitingForConnectivityHandler?(urlSession, task)
-    }
+    self.isWaitingForConnectivityHandler = self.unsplash.isWaitingForConnectivityHandler
   }
   
   func collections(byPageNumber page: Int, curated: Bool, completion: @escaping ((Result<PhotoCollections, Error>) -> Void)) {

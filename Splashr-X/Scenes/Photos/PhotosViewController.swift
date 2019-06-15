@@ -14,11 +14,7 @@ class PhotosViewController: UIViewController {
   
   var authenticationRepoType: AuthenticationRepoType?
   
-  var photosRepoType: PhotosRepoType? {
-    didSet {
-//      configureIsWaitingForConnectivity()
-    }
-  }
+  var photosRepoType: PhotosRepoType?
   
   // MARK: - Model
   
@@ -54,6 +50,8 @@ class PhotosViewController: UIViewController {
     }
   }
   
+  let interactor = DismissInteractor()
+  
   /// Used for pagination page number
   /// Default is 1 at the start of the app
   fileprivate var currentPage: Int = 1
@@ -77,6 +75,7 @@ class PhotosViewController: UIViewController {
     
     // Fetches the very first page
     fetchPhotos()
+    configureIsWaitingForConnectivity()
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -106,14 +105,22 @@ class PhotosViewController: UIViewController {
     tableView.prefetchDataSource = photosViewDataSourceProvider
   }
   
+  // MARK: - Task Is Waiting For Connectivity
+  
+  /// Activity Indicator that should animate when the task is waiting
+  fileprivate let activityIndicatorView = UIActivityIndicatorView(style: .gray)
+  
   /// Called if the urlSession is waiting for connectivity
   fileprivate func configureIsWaitingForConnectivity() {
-    photosRepoType?.isWaitingForConnectivityHandler = { [weak self] (session, task) in
-      print("waitin for connectivity in photos vc")
-    }
+    activityIndicatorView.center = tableView.center
+    tableView.addSubview(activityIndicatorView)
+    photosRepoType?.taskIsWaitingForConnectivity({ [weak self] (session, urlSessionTask) in
+      DispatchQueue.main.async {
+        self?.activityIndicatorView.startAnimating()
+      }
+    })
   }
-  
-  let interactor = DismissInteractor()
+
 }
 
 // MARK: - Fetching implementation
@@ -131,6 +138,11 @@ fileprivate extension PhotosViewController {
     isFetchInProgress = true
 
     photosRepoType?.photos(byPageNumber: byPageNumber, orderBy: orderBy, curated: false, completion: { [weak self] (result) in
+      defer {
+        DispatchQueue.main.async {
+          self?.activityIndicatorView.stopAnimating()
+        }
+      }
       switch result {
       case let .success(photos):
         self?.isFetchInProgress = false
