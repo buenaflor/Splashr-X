@@ -11,10 +11,11 @@ target 'Splashr-X' do
   pod 'PKHUD', '~> 5.0'
 
   target 'Splashr-XTests' do
-    inherit! :complete
+    inherit! :search_paths
     # Pods for testing
   end
 
+  # UI tests are disabled for now
 #  target 'Splashr-XUITests' do
 #    inherit! :search_paths
 #    # Pods for testing
