@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0782480626272A8F4CE51429 /* libPods-Splashr-XTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62D7F162A6794FB9337AE8FA /* libPods-Splashr-XTests.a */; };
 		3409096922A077D4007A1062 /* CoreDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3409096822A077D4007A1062 /* CoreDependencies.swift */; };
 		3409096C22A07CB1007A1062 /* VerticalTopAlignLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3409096B22A07CB1007A1062 /* VerticalTopAlignLabel.swift */; };
 		3409096E22A0802B007A1062 /* PhotosViewController+ActionHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3409096D22A0802B007A1062 /* PhotosViewController+ActionHandlers.swift */; };
@@ -117,7 +118,6 @@
 		39000CFC83EF2030C9784B84 /* libPods-Splashr-XUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8B365B64B05189572C1917 /* libPods-Splashr-XUITests.a */; };
 		3E879C332B79FCB9310EA4F7 /* Pods_Splashr_X.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D5C12D91FC474B60040024 /* Pods_Splashr_X.framework */; };
 		E30B9048D0157B6ECCA3EDFE /* Pods_Splashr_X_Splashr_XTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA5F5C5CC7F3E81D0F8600D /* Pods_Splashr_X_Splashr_XTests.framework */; };
-		FFF657B825B416246D577D62 /* Pods_Splashr_XTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E0104400DED97DC47A9303F /* Pods_Splashr_XTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,7 +139,6 @@
 
 /* Begin PBXFileReference section */
 		0DDDA3BDC710EDC532987CAA /* Pods-Splashr-X.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Splashr-X.debug.xcconfig"; path = "Target Support Files/Pods-Splashr-X/Pods-Splashr-X.debug.xcconfig"; sourceTree = "<group>"; };
-		0E0104400DED97DC47A9303F /* Pods_Splashr_XTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Splashr_XTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		145EED92B27BFE17E5F7C1E8 /* Pods-Splashr-X-Splashr-XTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Splashr-X-Splashr-XTests.release.xcconfig"; path = "Target Support Files/Pods-Splashr-X-Splashr-XTests/Pods-Splashr-X-Splashr-XTests.release.xcconfig"; sourceTree = "<group>"; };
 		2D18615FC82EC18440796DF2 /* Pods-Splashr-X-Splashr-XTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Splashr-X-Splashr-XTests.debug.xcconfig"; path = "Target Support Files/Pods-Splashr-X-Splashr-XTests/Pods-Splashr-X-Splashr-XTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3409096822A077D4007A1062 /* CoreDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDependencies.swift; sourceTree = "<group>"; };
@@ -256,6 +255,7 @@
 		34816CEC229DADCE00000724 /* CollectionsViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsViewTableViewCell.swift; sourceTree = "<group>"; };
 		34816CEE229DAEC600000724 /* CollectionsViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionsViewTableViewCell.xib; sourceTree = "<group>"; };
 		476181C786160321A22831D5 /* Pods-Splashr-XTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Splashr-XTests.release.xcconfig"; path = "Target Support Files/Pods-Splashr-XTests/Pods-Splashr-XTests.release.xcconfig"; sourceTree = "<group>"; };
+		62D7F162A6794FB9337AE8FA /* libPods-Splashr-XTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Splashr-XTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FA5F5C5CC7F3E81D0F8600D /* Pods_Splashr_X_Splashr_XTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Splashr_X_Splashr_XTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F7AFFB52A91C3124C1B2CA3 /* Pods-Splashr-X.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Splashr-X.release.xcconfig"; path = "Target Support Files/Pods-Splashr-X/Pods-Splashr-X.release.xcconfig"; sourceTree = "<group>"; };
 		A9D5C12D91FC474B60040024 /* Pods_Splashr_X.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Splashr_X.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -279,7 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E30B9048D0157B6ECCA3EDFE /* Pods_Splashr_X_Splashr_XTests.framework in Frameworks */,
-				FFF657B825B416246D577D62 /* Pods_Splashr_XTests.framework in Frameworks */,
+				0782480626272A8F4CE51429 /* libPods-Splashr-XTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,7 +529,7 @@
 				A9D5C12D91FC474B60040024 /* Pods_Splashr_X.framework */,
 				6FA5F5C5CC7F3E81D0F8600D /* Pods_Splashr_X_Splashr_XTests.framework */,
 				FD8B365B64B05189572C1917 /* libPods-Splashr-XUITests.a */,
-				0E0104400DED97DC47A9303F /* Pods_Splashr_XTests.framework */,
+				62D7F162A6794FB9337AE8FA /* libPods-Splashr-XTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
