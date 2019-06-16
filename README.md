@@ -1,6 +1,6 @@
 # Splashr-X - High Quality Unsplash Viewer
 
-[![Build Status](https://travis-ci.org/buenaflor/Splashr-X.svg?branch=develop](https://travis-ci.org/buenaflor/Splashr-X)
+[![Build Status](https://travis-ci.org/buenaflor/Splashr-X.svg?branch=develop](https://travis-ci.org/buenaflor/Splashr-X)]
 
 Splashr-X is a hobby project that is being programmed out of fun and for learning purposes. I try to use as little third-party libraries as possible to keep the code nice and clean.
 
