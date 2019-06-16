@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0782480626272A8F4CE51429 /* libPods-Splashr-XTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62D7F162A6794FB9337AE8FA /* libPods-Splashr-XTests.a */; };
 		3409096922A077D4007A1062 /* CoreDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3409096822A077D4007A1062 /* CoreDependencies.swift */; };
 		3409096C22A07CB1007A1062 /* VerticalTopAlignLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3409096B22A07CB1007A1062 /* VerticalTopAlignLabel.swift */; };
 		3409096E22A0802B007A1062 /* PhotosViewController+ActionHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3409096D22A0802B007A1062 /* PhotosViewController+ActionHandlers.swift */; };
@@ -115,9 +114,9 @@
 		34816CE8229DAA4600000724 /* CellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34816CE7229DAA4600000724 /* CellConfigurator.swift */; };
 		34816CED229DADCE00000724 /* CollectionsViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34816CEC229DADCE00000724 /* CollectionsViewTableViewCell.swift */; };
 		34816CEF229DAEC600000724 /* CollectionsViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34816CEE229DAEC600000724 /* CollectionsViewTableViewCell.xib */; };
-		39000CFC83EF2030C9784B84 /* libPods-Splashr-XUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8B365B64B05189572C1917 /* libPods-Splashr-XUITests.a */; };
-		3E879C332B79FCB9310EA4F7 /* Pods_Splashr_X.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D5C12D91FC474B60040024 /* Pods_Splashr_X.framework */; };
-		E30B9048D0157B6ECCA3EDFE /* Pods_Splashr_X_Splashr_XTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA5F5C5CC7F3E81D0F8600D /* Pods_Splashr_X_Splashr_XTests.framework */; };
+		A6C80EDB6C26043B19D25681 /* libPods-Splashr-XUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E51C17689246475F7733105 /* libPods-Splashr-XUITests.a */; };
+		F0EF3203AB41FF2B9307C724 /* Pods_Splashr_X.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D3D70A4C2FC3B0206B6A3A6 /* Pods_Splashr_X.framework */; };
+		F4D7D98EA5CFE9C9A7F4EA12 /* libPods-Splashr-XTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3661F5D0B38E4DCE5180420D /* libPods-Splashr-XTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,9 +137,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0DDDA3BDC710EDC532987CAA /* Pods-Splashr-X.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Splashr-X.debug.xcconfig"; path = "Target Support Files/Pods-Splashr-X/Pods-Splashr-X.debug.xcconfig"; sourceTree = "<group>"; };
-		145EED92B27BFE17E5F7C1E8 /* Pods-Splashr-X-Splashr-XTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Splashr-X-Splashr-XTests.release.xcconfig"; path = "Target Support Files/Pods-Splashr-X-Splashr-XTests/Pods-Splashr-X-Splashr-XTests.release.xcconfig"; sourceTree = "<group>"; };
-		2D18615FC82EC18440796DF2 /* Pods-Splashr-X-Splashr-XTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Splashr-X-Splashr-XTests.debug.xcconfig"; path = "Target Support Files/Pods-Splashr-X-Splashr-XTests/Pods-Splashr-X-Splashr-XTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1E51C17689246475F7733105 /* libPods-Splashr-XUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Splashr-XUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		24FDE50D91FB1DDA7649C758 /* Pods-Splashr-XTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Splashr-XTests.debug.xcconfig"; path = "Target Support Files/Pods-Splashr-XTests/Pods-Splashr-XTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2BCD92A915B767D7B0718D82 /* Pods-Splashr-XTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Splashr-XTests.release.xcconfig"; path = "Target Support Files/Pods-Splashr-XTests/Pods-Splashr-XTests.release.xcconfig"; sourceTree = "<group>"; };
+		32BCF80BDEDF5013FF4D92A6 /* Pods-Splashr-XUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Splashr-XUITests.debug.xcconfig"; path = "Target Support Files/Pods-Splashr-XUITests/Pods-Splashr-XUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3409096822A077D4007A1062 /* CoreDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDependencies.swift; sourceTree = "<group>"; };
 		3409096B22A07CB1007A1062 /* VerticalTopAlignLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalTopAlignLabel.swift; sourceTree = "<group>"; };
 		3409096D22A0802B007A1062 /* PhotosViewController+ActionHandlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotosViewController+ActionHandlers.swift"; sourceTree = "<group>"; };
@@ -254,15 +254,11 @@
 		34816CE7229DAA4600000724 /* CellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfigurator.swift; sourceTree = "<group>"; };
 		34816CEC229DADCE00000724 /* CollectionsViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsViewTableViewCell.swift; sourceTree = "<group>"; };
 		34816CEE229DAEC600000724 /* CollectionsViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionsViewTableViewCell.xib; sourceTree = "<group>"; };
-		476181C786160321A22831D5 /* Pods-Splashr-XTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Splashr-XTests.release.xcconfig"; path = "Target Support Files/Pods-Splashr-XTests/Pods-Splashr-XTests.release.xcconfig"; sourceTree = "<group>"; };
-		62D7F162A6794FB9337AE8FA /* libPods-Splashr-XTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Splashr-XTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6FA5F5C5CC7F3E81D0F8600D /* Pods_Splashr_X_Splashr_XTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Splashr_X_Splashr_XTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8F7AFFB52A91C3124C1B2CA3 /* Pods-Splashr-X.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Splashr-X.release.xcconfig"; path = "Target Support Files/Pods-Splashr-X/Pods-Splashr-X.release.xcconfig"; sourceTree = "<group>"; };
-		A9D5C12D91FC474B60040024 /* Pods_Splashr_X.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Splashr_X.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D98334D5EC4DAA98B71236BA /* Pods-Splashr-XUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Splashr-XUITests.debug.xcconfig"; path = "Target Support Files/Pods-Splashr-XUITests/Pods-Splashr-XUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		E6812C229113B2F323466E23 /* Pods-Splashr-XTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Splashr-XTests.debug.xcconfig"; path = "Target Support Files/Pods-Splashr-XTests/Pods-Splashr-XTests.debug.xcconfig"; sourceTree = "<group>"; };
-		FD8B365B64B05189572C1917 /* libPods-Splashr-XUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Splashr-XUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FFE98B0D9F3788037D02656D /* Pods-Splashr-XUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Splashr-XUITests.release.xcconfig"; path = "Target Support Files/Pods-Splashr-XUITests/Pods-Splashr-XUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3661F5D0B38E4DCE5180420D /* libPods-Splashr-XTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Splashr-XTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D3D70A4C2FC3B0206B6A3A6 /* Pods_Splashr_X.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Splashr_X.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A09189916420B8B1F662287E /* Pods-Splashr-XUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Splashr-XUITests.release.xcconfig"; path = "Target Support Files/Pods-Splashr-XUITests/Pods-Splashr-XUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CF054CA9BD7EE8631048F6CB /* Pods-Splashr-X.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Splashr-X.debug.xcconfig"; path = "Target Support Files/Pods-Splashr-X/Pods-Splashr-X.debug.xcconfig"; sourceTree = "<group>"; };
+		D1F9BCF0F0D03BD0E97615E7 /* Pods-Splashr-X.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Splashr-X.release.xcconfig"; path = "Target Support Files/Pods-Splashr-X/Pods-Splashr-X.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,7 +266,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E879C332B79FCB9310EA4F7 /* Pods_Splashr_X.framework in Frameworks */,
+				F0EF3203AB41FF2B9307C724 /* Pods_Splashr_X.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,8 +274,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E30B9048D0157B6ECCA3EDFE /* Pods_Splashr_X_Splashr_XTests.framework in Frameworks */,
-				0782480626272A8F4CE51429 /* libPods-Splashr-XTests.a in Frameworks */,
+				F4D7D98EA5CFE9C9A7F4EA12 /* libPods-Splashr-XTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +282,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39000CFC83EF2030C9784B84 /* libPods-Splashr-XUITests.a in Frameworks */,
+				A6C80EDB6C26043B19D25681 /* libPods-Splashr-XUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,17 +518,6 @@
 			path = "Tab Bar";
 			sourceTree = "<group>";
 		};
-		34387745017F2C10D047B15F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A9D5C12D91FC474B60040024 /* Pods_Splashr_X.framework */,
-				6FA5F5C5CC7F3E81D0F8600D /* Pods_Splashr_X_Splashr_XTests.framework */,
-				FD8B365B64B05189572C1917 /* libPods-Splashr-XUITests.a */,
-				62D7F162A6794FB9337AE8FA /* libPods-Splashr-XTests.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		34432F7422A719C800B615EF /* Add to Collection */ = {
 			isa = PBXGroup;
 			children = (
@@ -551,7 +535,7 @@
 				3454DF0A229AF2D700EA3592 /* Splashr-XUITests */,
 				3454DEE9229AF2D600EA3592 /* Products */,
 				349CE4488C1CF332029885C2 /* Pods */,
-				34387745017F2C10D047B15F /* Frameworks */,
+				9CCE9A71BEF03FBE41CC4D9E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -797,16 +781,24 @@
 		349CE4488C1CF332029885C2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0DDDA3BDC710EDC532987CAA /* Pods-Splashr-X.debug.xcconfig */,
-				8F7AFFB52A91C3124C1B2CA3 /* Pods-Splashr-X.release.xcconfig */,
-				2D18615FC82EC18440796DF2 /* Pods-Splashr-X-Splashr-XTests.debug.xcconfig */,
-				145EED92B27BFE17E5F7C1E8 /* Pods-Splashr-X-Splashr-XTests.release.xcconfig */,
-				D98334D5EC4DAA98B71236BA /* Pods-Splashr-XUITests.debug.xcconfig */,
-				FFE98B0D9F3788037D02656D /* Pods-Splashr-XUITests.release.xcconfig */,
-				E6812C229113B2F323466E23 /* Pods-Splashr-XTests.debug.xcconfig */,
-				476181C786160321A22831D5 /* Pods-Splashr-XTests.release.xcconfig */,
+				CF054CA9BD7EE8631048F6CB /* Pods-Splashr-X.debug.xcconfig */,
+				D1F9BCF0F0D03BD0E97615E7 /* Pods-Splashr-X.release.xcconfig */,
+				24FDE50D91FB1DDA7649C758 /* Pods-Splashr-XTests.debug.xcconfig */,
+				2BCD92A915B767D7B0718D82 /* Pods-Splashr-XTests.release.xcconfig */,
+				32BCF80BDEDF5013FF4D92A6 /* Pods-Splashr-XUITests.debug.xcconfig */,
+				A09189916420B8B1F662287E /* Pods-Splashr-XUITests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		9CCE9A71BEF03FBE41CC4D9E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9D3D70A4C2FC3B0206B6A3A6 /* Pods_Splashr_X.framework */,
+				3661F5D0B38E4DCE5180420D /* libPods-Splashr-XTests.a */,
+				1E51C17689246475F7733105 /* libPods-Splashr-XUITests.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -816,11 +808,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3454DF10229AF2D700EA3592 /* Build configuration list for PBXNativeTarget "Splashr-X" */;
 			buildPhases = (
-				EE25EECD9C69252D9E43D7B5 /* [CP] Check Pods Manifest.lock */,
+				37E596DD26641FA0A62FE1FF /* [CP] Check Pods Manifest.lock */,
 				3454DEE4229AF2D600EA3592 /* Sources */,
 				3454DEE5229AF2D600EA3592 /* Frameworks */,
 				3454DEE6229AF2D600EA3592 /* Resources */,
-				F2D2A09533E15333F6F7EBBF /* [CP] Embed Pods Frameworks */,
+				D98DA9F9F9FD411151052AF3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -835,7 +827,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3454DF13229AF2D700EA3592 /* Build configuration list for PBXNativeTarget "Splashr-XTests" */;
 			buildPhases = (
-				58164BCEE3E66175CAD3256E /* [CP] Check Pods Manifest.lock */,
+				1937FF296EFF248AECD22D60 /* [CP] Check Pods Manifest.lock */,
 				3454DEF8229AF2D700EA3592 /* Sources */,
 				3454DEF9229AF2D700EA3592 /* Frameworks */,
 				3454DEFA229AF2D700EA3592 /* Resources */,
@@ -854,7 +846,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3454DF16229AF2D700EA3592 /* Build configuration list for PBXNativeTarget "Splashr-XUITests" */;
 			buildPhases = (
-				890D661D1A4FD4F1585A1B4B /* [CP] Check Pods Manifest.lock */,
+				E11F7F18D7ACCB6DF22EFA59 /* [CP] Check Pods Manifest.lock */,
 				3454DF03229AF2D700EA3592 /* Sources */,
 				3454DF04229AF2D700EA3592 /* Frameworks */,
 				3454DF05229AF2D700EA3592 /* Resources */,
@@ -946,7 +938,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		58164BCEE3E66175CAD3256E /* [CP] Check Pods Manifest.lock */ = {
+		1937FF296EFF248AECD22D60 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -968,29 +960,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		890D661D1A4FD4F1585A1B4B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Splashr-XUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EE25EECD9C69252D9E43D7B5 /* [CP] Check Pods Manifest.lock */ = {
+		37E596DD26641FA0A62FE1FF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1012,7 +982,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F2D2A09533E15333F6F7EBBF /* [CP] Embed Pods Frameworks */ = {
+		D98DA9F9F9FD411151052AF3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1034,6 +1004,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Splashr-X/Pods-Splashr-X-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E11F7F18D7ACCB6DF22EFA59 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Splashr-XUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1303,7 +1295,7 @@
 		};
 		3454DF11229AF2D700EA3592 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0DDDA3BDC710EDC532987CAA /* Pods-Splashr-X.debug.xcconfig */;
+			baseConfigurationReference = CF054CA9BD7EE8631048F6CB /* Pods-Splashr-X.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1323,7 +1315,7 @@
 		};
 		3454DF12229AF2D700EA3592 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8F7AFFB52A91C3124C1B2CA3 /* Pods-Splashr-X.release.xcconfig */;
+			baseConfigurationReference = D1F9BCF0F0D03BD0E97615E7 /* Pods-Splashr-X.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1343,12 +1335,12 @@
 		};
 		3454DF14229AF2D700EA3592 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6812C229113B2F323466E23 /* Pods-Splashr-XTests.debug.xcconfig */;
+			baseConfigurationReference = 24FDE50D91FB1DDA7649C758 /* Pods-Splashr-XTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CR332YLA9N;
+				DEVELOPMENT_TEAM = 26NXGYG734;
 				INFOPLIST_FILE = "Splashr-XTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1365,12 +1357,12 @@
 		};
 		3454DF15229AF2D700EA3592 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 476181C786160321A22831D5 /* Pods-Splashr-XTests.release.xcconfig */;
+			baseConfigurationReference = 2BCD92A915B767D7B0718D82 /* Pods-Splashr-XTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CR332YLA9N;
+				DEVELOPMENT_TEAM = 26NXGYG734;
 				INFOPLIST_FILE = "Splashr-XTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1387,11 +1379,11 @@
 		};
 		3454DF17229AF2D700EA3592 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D98334D5EC4DAA98B71236BA /* Pods-Splashr-XUITests.debug.xcconfig */;
+			baseConfigurationReference = 32BCF80BDEDF5013FF4D92A6 /* Pods-Splashr-XUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CR332YLA9N;
+				DEVELOPMENT_TEAM = 26NXGYG734;
 				INFOPLIST_FILE = "Splashr-XUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1408,11 +1400,11 @@
 		};
 		3454DF18229AF2D700EA3592 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FFE98B0D9F3788037D02656D /* Pods-Splashr-XUITests.release.xcconfig */;
+			baseConfigurationReference = A09189916420B8B1F662287E /* Pods-Splashr-XUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CR332YLA9N;
+				DEVELOPMENT_TEAM = 26NXGYG734;
 				INFOPLIST_FILE = "Splashr-XUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
