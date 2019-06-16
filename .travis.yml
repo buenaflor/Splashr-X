@@ -1,8 +1,6 @@
 language: objective-c
 osx_image: xcode10.2
-xcode_workspace: Splashr-X.xcworkspace
-xcode_scheme: Splashr-X
-xcode_destination: platform=iOS Simulator,OS=12.2,name=iPhone X
+script: xcodebuild -workspace Splashr-x.xcworkspace -scheme Splashr-X -destination "name=iPhone X,OS=12.2" | xcpretty
 before_install:
   - pod repo update 
   - pod install
