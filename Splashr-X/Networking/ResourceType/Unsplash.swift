@@ -15,6 +15,9 @@ enum NonPublicScopeError: Error {
 
 enum Unsplash {
   
+  /// Get the user's profile
+  case getMe
+  
   /// Get a list of all collections
   case collections(
     page: Int?,
@@ -51,6 +54,8 @@ extension Unsplash: ResourceType {
   
   var endpoint: Endpoint {
     switch self {
+    case .getMe:
+      return .get(path: "/me")
     case .collections:
       return .get(path: "/collections")
     case let .userCollections(param):

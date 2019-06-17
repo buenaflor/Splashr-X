@@ -13,5 +13,7 @@ typealias PhotoCollections = [PhotoCollection]
 protocol CollectionsRepoType {
   func collections(byPageNumber page: Int, curated: Bool, completion: @escaping  ((Result<PhotoCollections, Error>) -> Void))
   
+  func collections(withUsername username: String, completion: @escaping ((Result<PhotoCollections, Error>) -> Void))
+  
   var isWaitingForConnectivityHandler: ((URLSession, URLSessionTask) -> Void)? { get set }
 }

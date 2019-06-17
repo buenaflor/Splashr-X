@@ -114,6 +114,10 @@
 		34816CE8229DAA4600000724 /* CellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34816CE7229DAA4600000724 /* CellConfigurator.swift */; };
 		34816CED229DADCE00000724 /* CollectionsViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34816CEC229DADCE00000724 /* CollectionsViewTableViewCell.swift */; };
 		34816CEF229DAEC600000724 /* CollectionsViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34816CEE229DAEC600000724 /* CollectionsViewTableViewCell.xib */; };
+		348D3A9022B7E8B7003C5A5A /* AddToCollectionsViewDataSourceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348D3A8F22B7E8B7003C5A5A /* AddToCollectionsViewDataSourceProvider.swift */; };
+		348D3A9322B7E9C2003C5A5A /* AddToCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348D3A9222B7E9C2003C5A5A /* AddToCollectionViewItem.swift */; };
+		348D3A9522B85400003C5A5A /* UserRepoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348D3A9422B85400003C5A5A /* UserRepoType.swift */; };
+		348D3A9722B85407003C5A5A /* UserRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348D3A9622B85407003C5A5A /* UserRepo.swift */; };
 		F0EF3203AB41FF2B9307C724 /* Pods_Splashr_X.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D3D70A4C2FC3B0206B6A3A6 /* Pods_Splashr_X.framework */; };
 /* End PBXBuildFile section */
 
@@ -249,6 +253,10 @@
 		34816CE7229DAA4600000724 /* CellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfigurator.swift; sourceTree = "<group>"; };
 		34816CEC229DADCE00000724 /* CollectionsViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsViewTableViewCell.swift; sourceTree = "<group>"; };
 		34816CEE229DAEC600000724 /* CollectionsViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionsViewTableViewCell.xib; sourceTree = "<group>"; };
+		348D3A8F22B7E8B7003C5A5A /* AddToCollectionsViewDataSourceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCollectionsViewDataSourceProvider.swift; sourceTree = "<group>"; };
+		348D3A9222B7E9C2003C5A5A /* AddToCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCollectionViewItem.swift; sourceTree = "<group>"; };
+		348D3A9422B85400003C5A5A /* UserRepoType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserRepoType.swift; path = "Splashr-X/Models/CollectionViewItem/UserRepoType.swift"; sourceTree = SOURCE_ROOT; };
+		348D3A9622B85407003C5A5A /* UserRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserRepo.swift; path = "Splashr-X/Models/CollectionViewItem/UserRepo.swift"; sourceTree = SOURCE_ROOT; };
 		6EAFADF7D2F7693A96D19719 /* Pods-Splashr-X-Splashr-XTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Splashr-X-Splashr-XTests.release.xcconfig"; path = "Target Support Files/Pods-Splashr-X-Splashr-XTests/Pods-Splashr-X-Splashr-XTests.release.xcconfig"; sourceTree = "<group>"; };
 		9D3D70A4C2FC3B0206B6A3A6 /* Pods_Splashr_X.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Splashr_X.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B123A66BFFBCA0044B6D60A9 /* Pods-Splashr-X-Splashr-XTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Splashr-X-Splashr-XTests.debug.xcconfig"; path = "Target Support Files/Pods-Splashr-X-Splashr-XTests/Pods-Splashr-X-Splashr-XTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -385,6 +393,8 @@
 		340909AD22A2FE66007A1062 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				348D3A9422B85400003C5A5A /* UserRepoType.swift */,
+				348D3A9622B85407003C5A5A /* UserRepo.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -516,6 +526,7 @@
 		34432F7422A719C800B615EF /* Add to Collection */ = {
 			isa = PBXGroup;
 			children = (
+				348D3A8E22B7E8A6003C5A5A /* DataSourceProvider */,
 				34432F7522A719E100B615EF /* AddToCollectionsViewController.swift */,
 				34432F7722A71A2500B615EF /* AddToCollectionsViewController.xib */,
 			);
@@ -693,8 +704,8 @@
 				3409096822A077D4007A1062 /* CoreDependencies.swift */,
 				340909B922A30A2F007A1062 /* Authentication */,
 				340909AD22A2FE66007A1062 /* User */,
-				342EF5FA229F1D0000B3E6EC /* Photos */,
 				342EF5F7229F1CF200B3E6EC /* Collections */,
+				342EF5FA229F1D0000B3E6EC /* Photos */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -722,6 +733,7 @@
 		34816CB7229C7D1E00000724 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				348D3A9122B7E9AE003C5A5A /* CollectionViewItem */,
 				342EF606229F1F9200B3E6EC /* TableViewItem */,
 				34816CB8229C7D1E00000724 /* ImageURLs.swift */,
 				34816CB9229C7D1E00000724 /* Links.swift */,
@@ -771,6 +783,22 @@
 				34816CE7229DAA4600000724 /* CellConfigurator.swift */,
 			);
 			path = "Cell Configurator";
+			sourceTree = "<group>";
+		};
+		348D3A8E22B7E8A6003C5A5A /* DataSourceProvider */ = {
+			isa = PBXGroup;
+			children = (
+				348D3A8F22B7E8B7003C5A5A /* AddToCollectionsViewDataSourceProvider.swift */,
+			);
+			path = DataSourceProvider;
+			sourceTree = "<group>";
+		};
+		348D3A9122B7E9AE003C5A5A /* CollectionViewItem */ = {
+			isa = PBXGroup;
+			children = (
+				348D3A9222B7E9C2003C5A5A /* AddToCollectionViewItem.swift */,
+			);
+			path = CollectionViewItem;
 			sourceTree = "<group>";
 		};
 		349CE4488C1CF332029885C2 /* Pods */ = {
@@ -995,11 +1023,13 @@
 				34816CDF229DA1CC00000724 /* TableViewDataSourceProvider.swift in Sources */,
 				3454DEEE229AF2D600EA3592 /* CollectionsViewController.swift in Sources */,
 				3454DF4E229AF5D900EA3592 /* NibIdentifiable.swift in Sources */,
+				348D3A9022B7E8B7003C5A5A /* AddToCollectionsViewDataSourceProvider.swift in Sources */,
 				34816CC4229C7D1E00000724 /* User.swift in Sources */,
 				3454DF4D229AF5D900EA3592 /* UICollectionView+NibIdentifiable.swift in Sources */,
 				3454DF29229AF41F00EA3592 /* URLRequest+Extensions.swift in Sources */,
 				3409098222A08FC2007A1062 /* AnimatableNavigationController.swift in Sources */,
 				3409098E22A14A02007A1062 /* PhotoLibraryManager.swift in Sources */,
+				348D3A9722B85407003C5A5A /* UserRepo.swift in Sources */,
 				3454DF3B229AF56200EA3592 /* SceneCoordinator.swift in Sources */,
 				3409098C22A140C9007A1062 /* ImageZoomScrollView.swift in Sources */,
 				3409097622A089BE007A1062 /* PhotoDetailsPushTransition.swift in Sources */,
@@ -1012,6 +1042,7 @@
 				34816CC7229C7D1E00000724 /* Category.swift in Sources */,
 				342EF5FC229F1D1D00B3E6EC /* PhotosReposType.swift in Sources */,
 				3454DF49229AF5D900EA3592 /* UIView+AutoLayout.swift in Sources */,
+				348D3A9322B7E9C2003C5A5A /* AddToCollectionViewItem.swift in Sources */,
 				3454DF3A229AF56200EA3592 /* Scene.swift in Sources */,
 				3409099922A155E3007A1062 /* CollectionViewDataSourceProvider.swift in Sources */,
 				3409099E22A156D4007A1062 /* UICollectionView+GenericDequeue.swift in Sources */,
@@ -1027,6 +1058,7 @@
 				3409098722A09814007A1062 /* PhotoDetailsPopTransition.swift in Sources */,
 				340909C222A352F8007A1062 /* AuthenticationRepoType.swift in Sources */,
 				34816CDC229D9E8000000724 /* CollectionsViewDataSourceProvider.swift in Sources */,
+				348D3A9522B85400003C5A5A /* UserRepoType.swift in Sources */,
 				340909C022A310DE007A1062 /* UserSession.swift in Sources */,
 				340909A122A15A81007A1062 /* LoginImagePreviewCollectionViewCell.swift in Sources */,
 				3454DF2C229AF41F00EA3592 /* HTTPNetworking.swift in Sources */,
