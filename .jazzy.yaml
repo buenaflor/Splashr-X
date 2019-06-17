@@ -1,7 +1,0 @@
-author: Giancarlo Buenaflor
-author_url: https://github.com/buenaflor/Splashr-X
-github_url: https://github.com/buenaflor/Splashr-X
-output: docs/source
-skip_undocumented: true
-hide_documentation_coverage: true
-readme: README.md
