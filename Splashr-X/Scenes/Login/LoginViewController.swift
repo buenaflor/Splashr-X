@@ -115,16 +115,52 @@ class LoginViewController: UIViewController {
   // MARK: Authentication
   
   fileprivate func authenticate() {
+    let dispatchGroup = DispatchGroup()
+    let queue = DispatchQueue(label: "authentication")
+    var authError: Error?
+    let userRepo = UserRepo()
     authenticationRepoType?.authenticate()
-    authenticationRepoType?.receivedAccessTokenHandler = { [weak self] error in
-      if let error = error {
-        print("error getting access token: ", error)
-      } else {
-        CustomHUD.showSuccess(title: "Success",
-                              details: "You are now logged in",
-                              delay: 1.5) { _ in
-                                self?.dismiss(animated: true)
-        }
+    
+    dispatchGroup.enter()
+    authenticationRepoType?.receivedAccessTokenHandler = { error in
+      defer {
+        dispatchGroup.leave()
+      }
+      guard error == nil else {
+        authError = error
+        print("error getting access token: ", error!)
+        return
+      }
+    }
+    
+    dispatchGroup.enter()
+    userRepo.getMe(completion: { [weak self] (result) in
+      defer {
+        dispatchGroup.leave()
+      }
+      switch result {
+      case let .success(user):
+        UserSession.saveUser(user, completion: { (error) in
+          guard error == nil else {
+            authError = error
+            print("error saving user: ", error!)
+            return
+          }
+        })
+      case let .failure(error):
+        print("error getting user: ", error)
+      }
+    })
+
+    dispatchGroup.notify(queue: queue) {
+      if let error = authError {
+        print("DispatchQueue failed. Error: ", error)
+      }
+      CustomHUD.showSuccess(title: "Success",
+                            details: "You are now logged in",
+                            delay: 1.5) { [weak self] _ in
+                              print("All done. logged in and saved user session")
+                              self?.dismiss(animated: true)
       }
     }
   }

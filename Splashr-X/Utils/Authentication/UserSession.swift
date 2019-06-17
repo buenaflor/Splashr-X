@@ -10,6 +10,7 @@ import Foundation
 
 struct UserSession {
   
+  private static let savedUserKey = "SavedUser"
   private static let clientID = Configuration.UnsplashSettings.clientID
   
   static var accessToken: String? {
@@ -20,8 +21,31 @@ struct UserSession {
     UserDefaults.standard.removeObject(forKey: UserSession.clientID)
   }
   
-  static var isLoggedIn: Bool {
-    return accessToken != nil
+  static var currentUser: User? {
+    let defaults = UserDefaults.standard
+    if let savedUser = defaults.object(forKey: savedUserKey) as? Data {
+      let decoder = JSONDecoder()
+      if let user = try? decoder.decode(User.self, from: savedUser) {
+        return user
+      }
+    }
+    return nil
   }
   
+  // Is this thread safe?
+  static func saveUser(_ user: User, completion: (((Error?) -> Void))? = nil) {
+    let encoder = JSONEncoder()
+    do {
+      let encoded = try encoder.encode(user)
+      let defaults = UserDefaults.standard
+      defaults.set(encoded, forKey: savedUserKey)
+      completion?(nil)
+    } catch {
+      completion?(error)
+    }
+  }
+  
+  static var isLoggedIn: Bool {
+    return accessToken != nil && currentUser != nil
+  }
 }

@@ -66,17 +66,10 @@ extension PhotosViewController {
   
   /// Bookmarks the photo but checks if user is logged in first
   func bookmarkPhoto(_ button: UIButton, _ details: PhotoTableViewItem, _ photo: UIImage) {
-    let userRepo = UserRepo()
-    userRepo.getMe { (result) in
-      switch result {
-      case let .success(user):
-        print("my user is logged in boi")
-        let addToCollectionsVC = AddToCollectionsViewController.instantiate(presentDismissTransitionableDependencies: self, photo: photo, user: user, collectionsRepo: CollectionsRepo())
-        DispatchQueue.main.async {
-          self.present(addToCollectionsVC, animated: true)
-        }
-      case let .failure(error):
-        print("my error: ", error)
+    if let user = UserSession.currentUser {
+      let addToCollectionsVC = AddToCollectionsViewController.instantiate(presentDismissTransitionableDependencies: self, photo: photo, user: user, collectionsRepo: CollectionsRepo())
+      DispatchQueue.main.async {
+        self.present(addToCollectionsVC, animated: true)
       }
     }
   }
