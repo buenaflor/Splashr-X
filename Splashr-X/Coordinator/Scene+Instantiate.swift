@@ -51,9 +51,10 @@ extension LoginViewController {
 }
 
 extension AddToCollectionsViewController {
-  static func instantiate(presentDismissTransitionableDependencies: PresentDismissTransitionableDependencies) -> AddToCollectionsViewController {
+  static func instantiate(presentDismissTransitionableDependencies: PresentDismissTransitionableDependencies, photo: UIImage?) -> AddToCollectionsViewController {
     let addToCollectionsVC = AddToCollectionsViewController.initFromNib()
     addToCollectionsVC.presentDismissTransitionableDependencies = presentDismissTransitionableDependencies
+    addToCollectionsVC.photo = photo
     return addToCollectionsVC
   }
 }

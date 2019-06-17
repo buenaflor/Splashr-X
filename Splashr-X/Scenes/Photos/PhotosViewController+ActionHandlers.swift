@@ -11,10 +11,10 @@ import UIKit
 extension PhotosViewController {
   
   /// Likes a user photo but checks if user is logged in first
-  func likePhoto(_ button: UIButton, _ photo: PhotoTableViewItem) {
+  func likePhoto(_ button: UIButton, _ details: PhotoTableViewItem) {
     
     // User is logged in, now we can like
-    guard let id = photo.id else {
+    guard let id = details.id else {
       print("Error: cannot like, no id available")
       return
     }
@@ -65,8 +65,8 @@ extension PhotosViewController {
   }
   
   /// Bookmarks the photo but checks if user is logged in first
-  func bookmarkPhoto(_ button: UIButton, _ photo: PhotoTableViewItem) {
-    let addToCollectionsVC = AddToCollectionsViewController.instantiate(presentDismissTransitionableDependencies: self)
+  func bookmarkPhoto(_ button: UIButton, _ details: PhotoTableViewItem, _ photo: UIImage) {
+    let addToCollectionsVC = AddToCollectionsViewController.instantiate(presentDismissTransitionableDependencies: self, photo: photo)
     self.present(addToCollectionsVC, animated: true)
   }
   

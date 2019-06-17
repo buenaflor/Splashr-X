@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddToCollectionsViewController" customModule="Splashr_X" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="98f-ne-LPW" id="HRj-H0-gHp"/>
+                <outlet property="photoImageView" destination="tA5-ji-qcW" id="8sm-Hy-IFT"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Hnt-h9-G5n"/>
             </connections>
         </placeholder>
@@ -19,9 +21,50 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tA5-ji-qcW">
+                    <rect key="frame" x="24" y="100" width="366" height="400"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="400" id="fNq-2t-TXq"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LVd-B7-yHk" userLabel="Dismiss Button">
+                    <rect key="frame" x="35" y="60" width="24" height="24"/>
+                    <state key="normal" image="dropdown_arrow"/>
+                    <connections>
+                        <action selector="dismissViewController:" destination="-1" eventType="touchUpInside" id="2WO-ig-FjP"/>
+                    </connections>
+                </button>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="98f-ne-LPW">
+                    <rect key="frame" x="24" y="744" width="366" height="128"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="128" id="uhm-Hy-yIX"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rus-AW-k4I">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="LVd-B7-yHk" firstAttribute="top" secondItem="uzz-Y5-7SP" secondAttribute="top" constant="16" id="8Ig-AW-kQ6"/>
+                <constraint firstItem="tA5-ji-qcW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="24" id="KwV-Kn-IN7"/>
+                <constraint firstItem="uzz-Y5-7SP" firstAttribute="trailing" secondItem="98f-ne-LPW" secondAttribute="trailing" constant="24" id="RiN-em-pWG"/>
+                <constraint firstItem="tA5-ji-qcW" firstAttribute="top" secondItem="LVd-B7-yHk" secondAttribute="bottom" constant="16" id="Tqr-OI-xGK"/>
+                <constraint firstItem="LVd-B7-yHk" firstAttribute="leading" secondItem="uzz-Y5-7SP" secondAttribute="leading" constant="35" id="WsF-7J-hW2"/>
+                <constraint firstAttribute="trailing" secondItem="tA5-ji-qcW" secondAttribute="trailing" constant="24" id="pIR-nB-yyZ"/>
+                <constraint firstItem="98f-ne-LPW" firstAttribute="leading" secondItem="uzz-Y5-7SP" secondAttribute="leading" constant="24" id="pRS-Tf-BvI"/>
+                <constraint firstAttribute="bottom" secondItem="98f-ne-LPW" secondAttribute="bottom" constant="24" id="wSN-lu-g00"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <viewLayoutGuide key="safeArea" id="uzz-Y5-7SP"/>
         </view>
     </objects>
+    <resources>
+        <image name="dropdown_arrow" width="24" height="24"/>
+    </resources>
 </document>

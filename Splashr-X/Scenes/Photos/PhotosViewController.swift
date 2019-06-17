@@ -41,8 +41,8 @@ class PhotosViewController: UIViewController {
       photosViewDataSourceProvider?.downloadButtonTappedHandler = { [weak self] button, photo in
         self?.downloadPhoto(button, photo)
       }
-      photosViewDataSourceProvider?.bookmarkButtonTappedHandler = { [weak self] button, details in
-        self?.bookmarkPhoto(button, details)
+      photosViewDataSourceProvider?.bookmarkButtonTappedHandler = { [weak self] button, details, photo in
+        self?.bookmarkPhoto(button, details, photo)
       }
       photosViewDataSourceProvider?.photoImageViewTappedHandler = { [weak self] imageView, details, cell in
         self?.showPhotoDetails(imageView, details, cell)
