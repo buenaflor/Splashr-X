@@ -4,13 +4,4 @@ script: xcodebuild -workspace Splashr-x.xcworkspace -scheme Splashr-X -destinati
 before_install:
   - pod repo update 
   - pod install
-after_success:
-  - gem install jazzy
-  - jazzy
-deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: $GH_TOKEN  # Set in the settings page of your repository, as a secure variable
-  local-dir: docs/source
-  on:
-    branch: develop
+
