@@ -20,7 +20,7 @@ public enum HTTPNetworkingError: Error {
   case emptyResult
   case decodingFailed(Error?)
   case noHttpResponse
-  case requestFailed(Data, StatusCode)
+  case requestFailed(Data, HTTPStatusCodes)
 }
 
 public class HTTPNetworking<Resource: ResourceType>: NSObject, HTTPNetworkingType, URLSessionTaskDelegate {
@@ -57,7 +57,11 @@ public class HTTPNetworking<Resource: ResourceType>: NSObject, HTTPNetworkingTyp
         return
       }
       guard 200..<300 ~= response.statusCode else {
-        completion(.error(.requestFailed(data, response.statusCode)))
+        if let statusCode = HTTPStatusCodes(rawValue: response.statusCode) {
+          completion(.error(.requestFailed(data, statusCode)))
+        } else {
+          completion(.error(.requestFailed(data, .Unknown)))
+        }
         return
       }
       completion(.success(Response(urlRequest: request, data: data)))
