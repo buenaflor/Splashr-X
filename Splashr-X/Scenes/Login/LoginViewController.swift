@@ -11,12 +11,16 @@ import AuthenticationServices
 
 class LoginViewController: UIViewController {
   
+  /// The authenticationRepo contains authentication functions
   var authenticationRepoType: AuthenticationRepoType?
   
+  /// This closure will be called if the login was successfull
   var didLoginSuccessfully: (() -> Void)?
   
+  /// Determines if the ViewController has been dismissed by gesture or by tapping the icon
   var isBeingDismissedManually = false
   
+  /// The dependencies used to control the transition
   var presentDismissTransitionableDependencies: PresentDismissTransitionableDependencies? {
     didSet {
       transitioningDelegate = presentDismissTransitionableDependencies?.delegate
