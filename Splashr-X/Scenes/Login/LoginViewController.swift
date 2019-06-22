@@ -13,6 +13,8 @@ class LoginViewController: UIViewController {
   
   var authenticationRepoType: AuthenticationRepoType?
   
+  var didLoginSuccessfully: (() -> Void)?
+  
   var isBeingDismissedManually = false
   
   var presentDismissTransitionableDependencies: PresentDismissTransitionableDependencies? {
@@ -119,9 +121,9 @@ class LoginViewController: UIViewController {
     let queue = DispatchQueue(label: "authentication")
     var authError: Error?
     let userRepo = UserRepo()
-    authenticationRepoType?.authenticate()
     
     dispatchGroup.enter()
+    authenticationRepoType?.authenticate()
     authenticationRepoType?.receivedAccessTokenHandler = { error in
       defer {
         dispatchGroup.leave()
@@ -160,6 +162,7 @@ class LoginViewController: UIViewController {
                             details: "You are now logged in",
                             delay: 1.5) { [weak self] _ in
                               print("All done. logged in and saved user session")
+                              self?.didLoginSuccessfully?()
                               self?.dismiss(animated: true)
       }
     }

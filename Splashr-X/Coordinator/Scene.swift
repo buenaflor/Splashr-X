@@ -42,3 +42,20 @@ extension Scene: TargetScene {
     }
   }
 }
+
+extension Scene {
+  static func presentLoginFlowIfNeeded(in viewController: UIViewController,
+                                       presentableDismissDependencies: PresentDismissTransitionableDependencies,
+                                       onLoginSuccess: (() -> Void)?) {
+    if !UserSession.isLoggedIn {
+      let authenticationRepoType = AuthenticationRepo()
+      let loginVC = LoginViewController.instantiate(presentableDismissDependencies: presentableDismissDependencies, authenticationRepoType: authenticationRepoType)
+      viewController.present(loginVC, animated: true)
+      loginVC.didLoginSuccessfully = {
+        onLoginSuccess?()
+      }
+    } else {
+      onLoginSuccess?()
+    }
+  }
+}

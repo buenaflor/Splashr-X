@@ -12,32 +12,22 @@ extension PhotosViewController {
   
   /// Likes a user photo but checks if user is logged in first
   func likePhoto(_ button: UIButton, _ details: PhotoTableViewItem) {
-    
-    // User is logged in, now we can like
-    guard let id = details.id else {
-      print("Error: cannot like, no id available")
-      return
-    }
-    photosRepoType?.likePhoto(id: id, completion: { [weak self] (error) in
-      if let error = error {
-        switch error {
-        case .noAccessToken:
-          guard let strongSelf = self else {
-            return
-          }
-          let authenticationRepoType = AuthenticationRepo()
-          let loginVC = LoginViewController.instantiate(presentableDismissDependencies: strongSelf, authenticationRepoType: authenticationRepoType)
-          strongSelf.present(loginVC, animated: true)
-        default:
-          print("Error, couldn't like: ", error)
+    Scene.presentLoginFlowIfNeeded(in: self, presentableDismissDependencies: self) { [weak self] in
+      guard let id = details.id else {
+        print("Error: cannot like, no id available")
+        return
+      }
+      self?.photosRepoType?.likePhoto(id: id, completion: { (error) in
+        guard error == nil else {
+          print("Error liking photo: ", error!)
+          return
         }
-      } else {
         DispatchQueue.main.async {
           button.setImage(#imageLiteral(resourceName: "heart_filled").withRenderingMode(.alwaysTemplate), for: .normal)
           button.tintColor = .red
         }
-      }
-    })
+      })
+    }
   }
   
   /// Sends/Share the photo based on the actions
@@ -66,8 +56,13 @@ extension PhotosViewController {
   
   /// Bookmarks the photo but checks if user is logged in first
   func bookmarkPhoto(_ button: UIButton, _ details: PhotoTableViewItem, _ photo: UIImage) {
-    if let user = UserSession.currentUser {
-      let addToCollectionsVC = AddToCollectionsViewController.instantiate(presentDismissTransitionableDependencies: self, photo: photo, user: user, collectionsRepo: CollectionsRepo())
+    Scene.presentLoginFlowIfNeeded(in: self, presentableDismissDependencies: self) { [weak self] in
+      guard let self = self else { return }
+      
+      // We are logged in so we can unwrap it
+      let user = UserSession.currentUser!
+      let collectionsRepo = CollectionsRepo()
+      let addToCollectionsVC = AddToCollectionsViewController.instantiate(presentDismissTransitionableDependencies: self, photo: photo, user: user, collectionsRepo: collectionsRepo)
       DispatchQueue.main.async {
         self.present(addToCollectionsVC, animated: true)
       }

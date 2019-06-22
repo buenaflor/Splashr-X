@@ -6,7 +6,7 @@
 //  Copyright © 2019 Giancarlo Buenaflor. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct UserSession {
   
