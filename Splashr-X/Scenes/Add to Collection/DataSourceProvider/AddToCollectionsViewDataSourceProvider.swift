@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Nuke
 
 protocol AddToCollectionsViewDataSourceProviderType: CollectionViewDataSourceProvider, Reloadable { }
 
@@ -19,19 +20,41 @@ class AddToCollectionsViewDataSourceProvider<Model: AddToCollectionViewItem>: NS
   }
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 0
+    return models.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    return UICollectionViewCell()
+    // No cell configurator here because this is a trivial task
+    let cell = collectionView.dequeue(AddToCollectionsPhotoCollectionCell.self, for: indexPath)
+    let model = models[indexPath.row]
+    if let url = URL(string: model.coverPhoto?.urls?.regular ?? "") {
+      Nuke.loadImage(with: url, into: cell.coverImageView)
+    }
+    return cell
+  }
+  
+  typealias SelectedItems = [IndexPath]
+  private var selectedItems: SelectedItems = []
+  
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    guard let cell = collectionView.cellForItem(at: indexPath) as? AddToCollectionsPhotoCollectionCell else {
+      return
+    }
+    if !selectedItems.contains(indexPath) {
+      selectedItems.append(indexPath)
+      cell.addLightLayerOverImage()
+    } else {
+      selectedItems.removeAll(where: { $0 == indexPath })
+      cell.removeLightLayerOverImage()
+    }
   }
   
   func reloadAll(_ models: [Model]) {
-    
+    self.models = models
   }
   
   func append(_ model: Model) {
-    
+    self.models.append(model)
   }
 }
 

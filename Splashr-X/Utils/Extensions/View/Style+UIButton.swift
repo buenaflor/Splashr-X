@@ -19,7 +19,7 @@ extension ViewStyle where T: UIView {
 
 extension ViewStyle where T: UIView {
   
-  static var darkTransparent: ViewStyle<T> {
+  static var darkTransparentBackground: ViewStyle<T> {
     return ViewStyle<T> {
       $0.backgroundColor = .black
       $0.alpha = 0.25
@@ -39,13 +39,6 @@ extension ViewStyle where T: UIView {
     return ViewStyle<T> {
       $0.layer.cornerRadius = $0.frame.width / 2
       $0.clipsToBounds = true
-      return $0
-    }
-  }
-  
-  static var cornered: ViewStyle<T> {
-    return ViewStyle<T> {
-      $0.layer.cornerRadius = 7.5
       return $0
     }
   }

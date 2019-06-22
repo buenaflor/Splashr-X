@@ -34,7 +34,8 @@ extension PhotosViewController {
   func sendPhoto(_ button: UIButton, _ photo: UIImage) {
     // set up activity view controller
     let imageToShare = [ photo ]
-    let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
+    let activityViewController = UIActivityViewController(activityItems: imageToShare,
+                                                          applicationActivities: nil)
     activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
     
     // exclude some activity types from the list (optional)
@@ -62,7 +63,10 @@ extension PhotosViewController {
       // We are logged in so we can unwrap it
       let user = UserSession.currentUser!
       let collectionsRepo = CollectionsRepo()
-      let addToCollectionsVC = AddToCollectionsViewController.instantiate(presentDismissTransitionableDependencies: self, photo: photo, user: user, collectionsRepo: collectionsRepo)
+      let addToCollectionsVC = AddToCollectionsViewController.instantiate(presentDismissTransitionableDependencies: self,
+                                                                          photo: photo,
+                                                                          user: user,
+                                                                          collectionsRepo: collectionsRepo)
       DispatchQueue.main.async {
         self.present(addToCollectionsVC, animated: true)
       }

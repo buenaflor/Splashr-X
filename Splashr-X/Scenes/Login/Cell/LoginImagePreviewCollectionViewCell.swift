@@ -23,7 +23,7 @@ class LoginImagePreviewCollectionViewCell: UICollectionViewCell {
     photoImageView.apply(.fill)
     addSubview(photoImageView)
     
-    darkView.apply(.darkTransparent)
+    darkView.apply(.darkTransparentBackground)
     addSubview(darkView)
   }
   

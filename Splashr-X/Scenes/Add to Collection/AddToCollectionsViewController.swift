@@ -13,17 +13,33 @@ class AddToCollectionsViewController: UIViewController {
   @IBOutlet weak var photoImageView: UIImageView! {
     didSet {
       photoImageView
-        .apply(.cornered)
+        .apply(.rounded)
         .apply(.fill)
     }
   }
   
+  @IBOutlet weak var numberOfCollectionsLabel: UILabel!
+  
   /// Literally a collection view that represents Unsplash collections
   @IBOutlet weak var collectionView: UICollectionView! {
     didSet {
-      
+      collectionView.registerNib(AddToCollectionsPhotoCollectionCell.self)
+      if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+        layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: collectionView.frame.height, height: collectionView.frame.height)
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+      }
     }
   }
+  
+  fileprivate var photoCollections: PhotoCollections = [] {
+    didSet {
+      addToCollectionsViewDataSourceProvider?.reloadAll(photoCollections)
+    }
+  }
+  
+  fileprivate var addToCollectionsViewDataSourceProvider: AddToCollectionsViewDataSourceProvider<PhotoCollection>?
   
   /// The username (logged in user) which we will pull the collections from
   var username: String = ""
@@ -42,11 +58,25 @@ class AddToCollectionsViewController: UIViewController {
     
     configureViewController()
     configureViews()
-    
-    collectionsRepo?.collections(withUsername: username, completion: { (result) in
+    configureDataSourceProvider()
+    fetchCollections(from: username)
+  }
+  
+  /// Configures the data source provider
+  fileprivate func configureDataSourceProvider() {
+    addToCollectionsViewDataSourceProvider = AddToCollectionsViewDataSourceProvider(models: photoCollections)
+    collectionView.delegate = addToCollectionsViewDataSourceProvider
+    collectionView.dataSource = addToCollectionsViewDataSourceProvider
+  }
+  
+  fileprivate func fetchCollections(from username: String) {
+    collectionsRepo?.collections(withUsername: username, completion: { [weak self] (result) in
       switch result {
       case let .success(collections):
-        print("my collections: ", collections)
+        self?.photoCollections = collections
+        DispatchQueue.main.async {
+          self?.collectionView.reloadData()
+        }
       case let .failure(error):
         print("my error: ", error)
       }

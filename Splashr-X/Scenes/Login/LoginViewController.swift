@@ -43,7 +43,7 @@ class LoginViewController: UIViewController {
   
   @IBOutlet weak var loginButton: UIButton! {
     didSet {
-      loginButton.apply(.cornered)
+      loginButton.apply(.rounded)
     }
   }
   

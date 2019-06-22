@@ -8,6 +8,7 @@
 
 import UIKit
 
+// TODO: Implement removal of specific styles
 struct ViewStyle<T> {
   let style: (T) -> T
 }
@@ -26,6 +27,7 @@ extension Stylable {
   func apply(_ style: ViewStyle<Self>) -> Self {
     return style.style(self)
   }
+
 }
 
 extension UIView: Stylable {}
