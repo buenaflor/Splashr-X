@@ -33,7 +33,8 @@ extension TabBarController {
 }
 
 extension PhotoDetailsViewController {
-  static func instantiate(photo: UIImage, details: PhotoTableViewItem) -> PhotoDetailsViewController {
+  static func instantiate(photo: UIImage,
+                          details: PhotoTableViewItem) -> PhotoDetailsViewController {
     let photoDetailsVC = PhotoDetailsViewController()
     photoDetailsVC.photo = photo
     photoDetailsVC.details = details
@@ -42,7 +43,8 @@ extension PhotoDetailsViewController {
 }
 
 extension LoginViewController {
-  static func instantiate(presentableDismissDependencies: PresentDismissTransitionableDependencies, authenticationRepoType: AuthenticationRepoType) -> LoginViewController {
+  static func instantiate(presentableDismissDependencies: PresentDismissTransitionableDependencies,
+                          authenticationRepoType: AuthenticationRepoType) -> LoginViewController {
     let loginVC = LoginViewController()
     loginVC.authenticationRepoType = authenticationRepoType
     loginVC.presentDismissTransitionableDependencies = presentableDismissDependencies
@@ -51,12 +53,17 @@ extension LoginViewController {
 }
 
 extension AddToCollectionsViewController {
-  static func instantiate(presentDismissTransitionableDependencies: PresentDismissTransitionableDependencies, photo: UIImage?, user: User, collectionsRepo: CollectionsRepoType) -> AddToCollectionsViewController {
+  static func instantiate(presentDismissTransitionableDependencies: PresentDismissTransitionableDependencies,
+                          photo: UIImage?,
+                          photoID: String,
+                          user: User,
+                          collectionsRepo: CollectionsRepoType) -> AddToCollectionsViewController {
     let addToCollectionsVC = AddToCollectionsViewController.initFromNib()
     addToCollectionsVC.presentDismissTransitionableDependencies = presentDismissTransitionableDependencies
     addToCollectionsVC.collectionsRepo = collectionsRepo
     addToCollectionsVC.username = user.username ?? ""
     addToCollectionsVC.photo = photo
+    addToCollectionsVC.photoID = photoID
     return addToCollectionsVC
   }
 }

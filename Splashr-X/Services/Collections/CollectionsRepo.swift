@@ -30,6 +30,24 @@ struct CollectionsRepo: CollectionsRepoType {
 
     requestCollections(withUsername: username, page: 1, photosPerPage: photosPerPage, completion: completion)
   }
+  
+  func addPhotoToCollection(withId id: Int, photoId: String, completion: @escaping ((Result<Photo, Error>) -> Void)) {
+    unsplash.request(.addPhotoToCollection(collectionID: id, photoID: photoId)) { (response) in
+      switch response {
+      case let .success(value):
+        do {
+          let photo = try value.map(to: Photo.self)
+          completion(Result.success(photo))
+        }
+        catch {
+          // Decoding error
+          completion(Result.failure(error))
+        }
+      case let .error(error):
+        completion(Result.failure(error))
+      }
+    }
+  }
 }
 
 fileprivate extension CollectionsRepo {

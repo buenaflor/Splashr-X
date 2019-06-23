@@ -10,6 +10,12 @@ import UIKit
 
 class AddToCollectionsViewController: UIViewController {
   
+  @IBOutlet weak var saveButton: UIButton! {
+    didSet {
+      saveButton.apply(.rounded)
+    }
+  }
+  
   @IBOutlet weak var photoImageView: UIImageView! {
     didSet {
       photoImageView
@@ -17,8 +23,6 @@ class AddToCollectionsViewController: UIViewController {
         .apply(.fill)
     }
   }
-  
-  @IBOutlet weak var numberOfCollectionsLabel: UILabel!
   
   /// Literally a collection view that represents Unsplash collections
   @IBOutlet weak var collectionView: UICollectionView! {
@@ -44,6 +48,7 @@ class AddToCollectionsViewController: UIViewController {
   /// The username (logged in user) which we will pull the collections from
   var username: String = ""
   var photo: UIImage?
+  var photoID: String = ""
   var collectionsRepo: CollectionsRepoType?
   
   var isBeingDismissedManually = true
@@ -93,10 +98,40 @@ class AddToCollectionsViewController: UIViewController {
   }
   
   // MARK: - Button Action
-    
-  @IBAction func dismissViewController(_ sender: UIButton) {
-    isBeingDismissedManually = true
-    dismiss(animated: true, completion: nil)
+  
+  @IBAction func saveToSelectedCollections(_ sender: UIButton) {
+    guard
+      let selectedItemsIndexPaths = addToCollectionsViewDataSourceProvider?.selectedItems,
+      selectedItemsIndexPaths.count > 0
+    else {
+      CustomHUD.showError(title: "Error", details: "No collection has been selected")
+      return
+    }
+    let selectedCollections = selectedItemsIndexPaths.map({ photoCollections[$0.row] })
+    let dispatchGroup = DispatchGroup()
+    let dispatchQueue = DispatchQueue(label: "Add Photos To Collection")
+    var errors: [Error] = []
+    for collection in selectedCollections {
+      guard let collectionId = collection.id, !photoID.isEmpty else {
+        return
+      }
+      dispatchGroup.enter()
+      collectionsRepo?.addPhotoToCollection(withId: collectionId, photoId: photoID, completion: { (result) in
+        if case let Result.failure(error) = result {
+          errors.append(error)
+        }
+        dispatchGroup.leave()
+      })
+    }
+    dispatchGroup.notify(queue: dispatchQueue) {
+      guard errors.isEmpty else {
+        print("errors occured")
+        return
+      }
+      self.dismissViewController(animated: true)
+      print("wut finished")
+    }
+    print("selected ", selectedCollections)
   }
   
   // MARK: - Animator

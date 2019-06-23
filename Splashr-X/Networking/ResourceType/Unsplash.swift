@@ -40,6 +40,33 @@ enum Unsplash {
   
   /// Remove a user’s like of a photo.
   case unlikePhoto(id: String)
+  
+  /// Create a new collection
+  case createCollection(
+    title: String,
+    description: String?,
+    isPrivate: Bool?)
+  
+  /// Update an existing collection
+  case updateCollection(
+    id: Int,
+    title: String?,
+    description: String?,
+    isPrivate: Bool?)
+  
+  /// Delete an existing collection
+  case deleteCollection(id: Int)
+  
+  /// Add a photo to a collection
+  case addPhotoToCollection(
+    collectionID: Int,
+    photoID: String)
+  
+  /// Remove a photo from a collection
+  case removePhotoFromCollection(
+    collectionID: Int,
+    photoID: String)
+
 }
 
 extension Unsplash: ResourceType {
@@ -66,6 +93,16 @@ extension Unsplash: ResourceType {
       return .post(path: "/photos/\(id)/like")
     case let .unlikePhoto(id):
       return .delete(path: "/photos/\(id)/like")
+    case .createCollection:
+      return .post(path: "/collections")
+    case let .updateCollection(params):
+      return .put(path: "/collections\(params.id)")
+    case let .deleteCollection(id):
+      return .delete(path: "/collections/\(id)")
+    case let .addPhotoToCollection(params):
+      return .post(path: "/collections/\(params.collectionID)/add")
+    case let .removePhotoFromCollection(params):
+      return .delete(path: "/collections/\(params.collectionID)/remove")
     }
   }
   
@@ -88,6 +125,33 @@ extension Unsplash: ResourceType {
       params["order_by"] = orderBy
       
       return .requestWithParameters(params, encoding: URLEncoding())
+      
+    case let .createCollection(value):
+
+      var params: [String: Any] = [:]
+      params["title"] = value.title
+      params["description"] = value.description
+      params["private"] = value.isPrivate
+      
+      return .requestWithParameters(params, encoding: URLEncoding())
+      
+    case let .updateCollection(value):
+      
+      var params: [String: Any] = [:]
+      params["title"] = value.title
+      params["description"] = value.description
+      params["private"] = value.isPrivate
+      
+      return .requestWithParameters(params, encoding: URLEncoding())
+      
+    case let .addPhotoToCollection(value),
+         let .removePhotoFromCollection(value):
+      
+      var params: [String: Any] = [:]
+      params["photo_id"] = value.photoID
+      
+      return .requestWithParameters(params, encoding: URLEncoding())
+
     default:
       return .requestWithParameters([:], encoding: URLEncoding())
     }

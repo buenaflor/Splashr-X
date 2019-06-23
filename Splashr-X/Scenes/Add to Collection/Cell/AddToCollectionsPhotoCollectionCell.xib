@@ -16,21 +16,53 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q1p-hK-uU9">
-                    <rect key="frame" x="0.0" y="0.0" width="257" height="211"/>
+                    <rect key="frame" x="0.0" y="0.0" width="257" height="182"/>
                 </imageView>
+                <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G3m-Xo-j5k">
+                    <rect key="frame" x="0.0" y="0.0" width="257" height="182"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="Itp-V7-Bgj">
+                    <rect key="frame" x="202" y="127" width="45" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="Cvh-vz-9bp"/>
+                        <constraint firstAttribute="width" constant="45" id="PQr-1R-dec"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Collection" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vhe-wH-Nrn">
+                    <rect key="frame" x="0.0" y="190" width="257" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="G3m-Xo-j5k" firstAttribute="top" secondItem="q1p-hK-uU9" secondAttribute="top" id="96b-WO-zYB"/>
+                <constraint firstAttribute="bottom" secondItem="Vhe-wH-Nrn" secondAttribute="bottom" id="DXh-h2-adY"/>
                 <constraint firstItem="q1p-hK-uU9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ESM-sh-ugG"/>
                 <constraint firstAttribute="trailing" secondItem="q1p-hK-uU9" secondAttribute="trailing" id="Jmq-A0-ZKr"/>
+                <constraint firstItem="q1p-hK-uU9" firstAttribute="trailing" secondItem="Itp-V7-Bgj" secondAttribute="trailing" constant="10" id="XUs-yR-6k4"/>
+                <constraint firstAttribute="trailing" secondItem="Vhe-wH-Nrn" secondAttribute="trailing" id="YTy-XL-Ukt"/>
                 <constraint firstItem="q1p-hK-uU9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ZgU-4l-qo4"/>
-                <constraint firstAttribute="bottom" secondItem="q1p-hK-uU9" secondAttribute="bottom" id="iyJ-ab-PTA"/>
+                <constraint firstItem="G3m-Xo-j5k" firstAttribute="leading" secondItem="q1p-hK-uU9" secondAttribute="leading" id="fiJ-pb-b5F"/>
+                <constraint firstItem="Vhe-wH-Nrn" firstAttribute="top" secondItem="q1p-hK-uU9" secondAttribute="bottom" constant="8" symbolic="YES" id="iyJ-ab-PTA"/>
+                <constraint firstItem="q1p-hK-uU9" firstAttribute="bottom" secondItem="G3m-Xo-j5k" secondAttribute="bottom" id="sLJ-jF-ccF"/>
+                <constraint firstItem="Vhe-wH-Nrn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="uZj-Wb-U38"/>
+                <constraint firstItem="q1p-hK-uU9" firstAttribute="trailing" secondItem="G3m-Xo-j5k" secondAttribute="trailing" id="xvR-Ud-uoI"/>
+                <constraint firstItem="q1p-hK-uU9" firstAttribute="bottom" secondItem="Itp-V7-Bgj" secondAttribute="bottom" constant="10" id="zLK-uz-JBG"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="checkmarkImageView" destination="Itp-V7-Bgj" id="Rzs-ZM-WBl"/>
+                <outlet property="collectionTitleLabel" destination="Vhe-wH-Nrn" id="iLf-Cf-A2d"/>
                 <outlet property="coverImageView" destination="q1p-hK-uU9" id="MNi-Wc-u71"/>
+                <outlet property="lightView" destination="G3m-Xo-j5k" id="iYS-Ju-66l"/>
             </connections>
             <point key="canvasLocation" x="23.913043478260871" y="-130.91517857142856"/>
         </view>
     </objects>
+    <resources>
+        <image name="checkmark" width="25" height="25"/>
+    </resources>
 </document>

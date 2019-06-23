@@ -30,11 +30,12 @@ class AddToCollectionsViewDataSourceProvider<Model: AddToCollectionViewItem>: NS
     if let url = URL(string: model.coverPhoto?.urls?.regular ?? "") {
       Nuke.loadImage(with: url, into: cell.coverImageView)
     }
+    cell.collectionTitleLabel.text = model.title ?? ""
     return cell
   }
   
   typealias SelectedItems = [IndexPath]
-  private var selectedItems: SelectedItems = []
+  var selectedItems: SelectedItems = []
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     guard let cell = collectionView.cellForItem(at: indexPath) as? AddToCollectionsPhotoCollectionCell else {
@@ -43,9 +44,11 @@ class AddToCollectionsViewDataSourceProvider<Model: AddToCollectionViewItem>: NS
     if !selectedItems.contains(indexPath) {
       selectedItems.append(indexPath)
       cell.addLightLayerOverImage()
+      cell.addCheckmarkView()
     } else {
       selectedItems.removeAll(where: { $0 == indexPath })
       cell.removeLightLayerOverImage()
+      cell.removeCheckmarkView()
     }
   }
   

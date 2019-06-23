@@ -15,5 +15,7 @@ protocol CollectionsRepoType {
   
   func collections(withUsername username: String, completion: @escaping ((Result<PhotoCollections, Error>) -> Void))
   
+  func addPhotoToCollection(withId id: Int, photoId: String, completion: @escaping ((Result<Photo, Error>) -> Void))
+  
   var isWaitingForConnectivityHandler: ((URLSession, URLSessionTask) -> Void)? { get set }
 }

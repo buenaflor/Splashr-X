@@ -17,16 +17,34 @@ class AddToCollectionsPhotoCollectionCell: UICollectionViewCell {
         .apply(.rounded)
     }
   }
+  @IBOutlet weak var checkmarkImageView: UIImageView! {
+    didSet {
+      checkmarkImageView.isHidden = true
+    }
+  }
   
-  let lightView = UIView()
+  @IBOutlet weak var collectionTitleLabel: UILabel!
+  
+  @IBOutlet weak var lightView: UIView! {
+    didSet {
+      lightView.isHidden = true
+      lightView.backgroundColor = UIColor.white.withAlphaComponent(0.4)
+    }
+  }
   
   func addLightLayerOverImage() {
-    lightView.frame = coverImageView.frame
-    lightView.backgroundColor = UIColor.white.withAlphaComponent(0.3)
-    coverImageView.addSubview(lightView)
+    lightView.isHidden = false
   }
   
   func removeLightLayerOverImage() {
-    lightView.removeFromSuperview()
+    lightView.isHidden = true
+  }
+  
+  func addCheckmarkView() {
+    checkmarkImageView.isHidden = false
+  }
+  
+  func removeCheckmarkView() {
+    checkmarkImageView.isHidden = true
   }
 }
