@@ -86,3 +86,12 @@ public extension HTTPStatusCodes {
     return "HTTP Error: \(String(describing: self)). Status Code: \(self.rawValue) "
   }
 }
+
+extension Error {
+  var httpErrorDescription: String? {
+    if let self = self as? HTTPStatusCodes {
+      return self.errorDescription
+    }
+    return nil
+  }
+}

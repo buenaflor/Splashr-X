@@ -172,7 +172,11 @@ fileprivate extension PhotosViewController {
         }
       case let .failure(error):
         self?.isFetchInProgress = false
-        print("error: ", error)
+        if let httpErrorDescription = error.httpErrorDescription {
+          print("Error: ", httpErrorDescription)
+        } else {
+          print("Error: ", error)
+        }
       }
     })
   }
